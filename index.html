@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="theme-color" content="#07110d">
+<title>Daily Discipline</title>
+<style>
+:root{
+  --bg:#050806;--card:rgba(255,255,255,.075);--line:rgba(255,255,255,.11);
+  --text:#f5fff8;--muted:#9ba9a1;--green:#45f28a;--green2:#18b85e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;min-height:100vh;color:var(--text);
+ font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ background:
+ radial-gradient(circle at 15% 0%,rgba(69,242,138,.18),transparent 28%),
+ radial-gradient(circle at 100% 35%,rgba(26,151,255,.10),transparent 28%),
+ linear-gradient(145deg,#050806,#0b120e 48%,#030504);
+ overflow-x:hidden;
+}
+body:before,body:after{
+ content:"";position:fixed;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:-1;
+}
+body:before{width:180px;height:180px;background:rgba(69,242,138,.10);top:20%;left:-80px;animation:float 8s ease-in-out infinite}
+body:after{width:220px;height:220px;background:rgba(0,150,255,.07);bottom:5%;right:-100px;animation:float 10s ease-in-out infinite reverse}
+.app{width:min(100%,620px);margin:auto;padding:18px 14px 42px}
+header{text-align:center;padding:18px 0 20px;animation:drop .75s ease}
+.badge{
+ display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid var(--line);
+ border-radius:999px;background:rgba(255,255,255,.055);font-size:12px;color:#bfeccd;letter-spacing:.7px
+}
+.badge i{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 12px var(--green);animation:blink 1.5s infinite}
+h1{font-size:clamp(28px,8vw,42px);margin:14px 0 4px;letter-spacing:-1.5px}
+.subtitle{color:var(--muted);font-size:14px}
+.date{margin-top:7px;color:#d7e4dc;font-weight:600}
+.card{
+ background:var(--card);border:1px solid var(--line);backdrop-filter:blur(18px);
+ -webkit-backdrop-filter:blur(18px);border-radius:24px;padding:18px;margin:12px 0;
+ box-shadow:0 18px 55px rgba(0,0,0,.22);animation:rise .65s ease both;
+}
+.progress-card{padding:20px}
+.progress-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:13px}
+.progress-label{font-size:12px;color:var(--muted);letter-spacing:1.3px;text-transform:uppercase}
+.percent{font-size:30px;font-weight:900;letter-spacing:-1px}
+.track{height:15px;background:#1b2520;border-radius:99px;overflow:hidden;border:1px solid rgba(255,255,255,.05)}
+.fill{
+ width:0;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--green2),var(--green),#b4ffca);
+ transition:width .8s cubic-bezier(.2,.8,.2,1);position:relative
+}
+.fill:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.5) 45%,transparent 65%);animation:shine 2s linear infinite}
+.progress-note{text-align:center;color:var(--muted);font-size:12px;margin-top:10px}
+.task{
+ display:flex;align-items:center;justify-content:space-between;gap:14px;
+ padding:17px;border-radius:19px;background:rgba(255,255,255,.045);
+ border:1px solid rgba(255,255,255,.07);margin:10px 0;
+ transition:transform .25s ease,background .25s ease,border .25s ease;
+ animation:slide .55s ease both;
+}
+.task:has(input:checked){background:rgba(69,242,138,.075);border-color:rgba(69,242,138,.24)}
+.task-left{display:flex;align-items:center;gap:13px;min-width:0}
+.icon{
+ width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;border-radius:14px;
+ background:rgba(255,255,255,.07);font-size:22px
+}
+.name{font-weight:800;font-size:16px}.hint{font-size:11px;color:var(--muted);margin-top:3px}
+.check{
+ appearance:none;-webkit-appearance:none;width:29px;height:29px;flex:0 0 29px;border:2px solid #68746d;
+ border-radius:9px;background:transparent;position:relative;cursor:pointer;transition:.25s
+}
+.check:checked{background:var(--green);border-color:var(--green);transform:scale(1.06);box-shadow:0 0 18px rgba(69,242,138,.3)}
+.check:checked:after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#06220f;font-weight:1000;font-size:19px}
+.check:disabled{cursor:not-allowed}
+.meal{display:block}
+.meal-top{display:flex;align-items:center;gap:13px;margin-bottom:13px}
+textarea{
+ width:100%;min-height:78px;resize:none;border:1px solid rgba(255,255,255,.08);outline:0;
+ border-radius:15px;background:rgba(0,0,0,.23);color:var(--text);padding:13px;font:inherit;font-size:14px;
+ transition:border .2s,box-shadow .2s
+}
+textarea:focus{border-color:rgba(69,242,138,.5);box-shadow:0 0 0 3px rgba(69,242,138,.08)}
+textarea:disabled{opacity:.58}
+.lock{
+ border:0;margin-top:9px;padding:10px 13px;border-radius:11px;background:rgba(255,255,255,.08);
+ color:#eafff0;font-weight:750;cursor:pointer
+}
+.lock:active{transform:scale(.96)}.lock:disabled{opacity:.6;cursor:not-allowed}
+.locked{display:none;color:#72f3a0;font-size:11px;margin-top:8px}
+.quote{text-align:center;margin:24px 4px 8px;color:#dbe8df;line-height:1.65;font-weight:700}
+.quote:before,.quote:after{content:"";display:block;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:13px 0 20px}
+.quote strong{color:var(--green)}
+.footer{text-align:center;color:#59665e;font-size:11px;margin-top:18px}
+.toast{
+ position:fixed;left:50%;bottom:22px;transform:translate(-50%,120px);opacity:0;z-index:20;
+ background:#102119;border:1px solid rgba(69,242,138,.3);color:#dcffe9;padding:12px 16px;border-radius:14px;
+ box-shadow:0 15px 35px rgba(0,0,0,.35);transition:.35s;font-size:13px
+}
+.toast.show{transform:translate(-50%,0);opacity:1}
+@keyframes drop{from{opacity:0;transform:translateY(-22px)}to{opacity:1;transform:none}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes slide{from{opacity:0;transform:translateX(-15px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translate(25px,-25px) scale(1.08)}}
+@keyframes blink{50%{opacity:.35}}
+@keyframes shine{from{transform:translateX(-120%)}to{transform:translateX(120%)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="app">
+<header>
+  <div class="badge"><i></i> DAILY DISCIPLINE</div>
+  <h1>Build the Day.</h1>
+  <div class="subtitle">Small habits. Consistent days. Stronger you.</div>
+  <div class="date" id="date"></div>
+</header>
+
+<section class="card progress-card">
+  <div class="progress-head">
+    <div class="progress-label">Today's progress</div>
+    <div class="percent" id="percent">0%</div>
+  </div>
+  <div class="track"><div class="fill" id="fill"></div></div>
+  <div class="progress-note" id="progressNote">0 of 7 habits completed</div>
+</section>
+
+<section class="card">
+  <div class="task">
+    <div class="task-left"><div class="icon">🌾</div><div><div class="name">Spourts</div><div class="hint">Grains &amp; Pulses</div></div></div>
+    <input class="check" id="spourts" type="checkbox" aria-label="Spourts">
+  </div>
+
+  <div class="task">
+    <div class="task-left"><div class="icon">🥛</div><div><div class="name">Milk</div><div class="hint">Daily milk</div></div></div>
+    <input class="check" id="milk" type="checkbox" aria-label="Milk">
+  </div>
+
+  <div class="task meal">
+    <div class="meal-top"><div class="icon">🍳</div><div><div class="name">Breakfast</div><div class="hint">Write what you ate</div></div></div>
+    <textarea id="breakfast" placeholder="Example: 4 eggs + oats + banana"></textarea>
+    <button class="lock" id="breakfastBtn">🔒 Save &amp; Lock</button>
+    <div class="locked" id="breakfastLocked">✓ Locked for today</div>
+  </div>
+
+  <div class="task meal">
+    <div class="meal-top"><div class="icon">🍛</div><div><div class="name">Lunch</div><div class="hint">Write what you ate</div></div></div>
+    <textarea id="lunch" placeholder="Example: rice + chicken + vegetables"></textarea>
+    <button class="lock" id="lunchBtn">🔒 Save &amp; Lock</button>
+    <div class="locked" id="lunchLocked">✓ Locked for today</div>
+  </div>
+
+  <div class="task meal">
+    <div class="meal-top"><div class="icon">🍽️</div><div><div class="name">Dinner</div><div class="hint">Write what you ate</div></div></div>
+    <textarea id="dinner" placeholder="Example: chapati + dal + eggs"></textarea>
+    <button class="lock" id="dinnerBtn">🔒 Save &amp; Lock</button>
+    <div class="locked" id="dinnerLocked">✓ Locked for today</div>
+  </div>
+
+  <div class="task">
+    <div class="task-left"><div class="icon">🥚</div><div><div class="name">Egg</div><div class="hint">Daily egg target</div></div></div>
+    <input class="check" id="egg" type="checkbox" aria-label="Egg">
+  </div>
+
+  <div class="task">
+    <div class="task-left"><div class="icon">💧</div><div><div class="name">Water — 3 Litre</div><div class="hint">Complete your daily target</div></div></div>
+    <input class="check" id="water" type="checkbox" aria-label="Water 3 litre">
+  </div>
+</section>
+
+<div class="quote">
+  If you love yourself,<br><strong>do it regularly. ❤️</strong>
+</div>
+<div class="footer">Your day is saved on this device.</div>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY="daily_discipline_v1";
+const dateKey=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const empty=()=>({spourts:false,milk:false,egg:false,water:false,breakfast:"",lunch:"",dinner:"",breakfastLocked:false,lunchLocked:false,dinnerLocked:false});
+let current=dateKey(), data=empty();
+
+function all(){return JSON.parse(localStorage.getItem(KEY)||"{}")}
+function save(){const h=all();h[current]=data;localStorage.setItem(KEY,JSON.stringify(h))}
+function load(){
+ const h=all(); data=h[current]||empty(); render();
+}
+function render(){
+ document.getElementById("date").textContent=new Date().toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+ ["spourts","milk","egg","water"].forEach(k=>{
+   const el=document.getElementById(k);el.checked=!!data[k];el.disabled=!!data[k];
+ });
+ ["breakfast","lunch","dinner"].forEach(k=>{
+   const ta=document.getElementById(k),btn=document.getElementById(k+"Btn"),msg=document.getElementById(k+"Locked");
+   ta.value=data[k]||"";
+   const locked=!!data[k+"Locked"];
+   ta.disabled=locked;btn.disabled=locked;msg.style.display=locked?"block":"none";
+   btn.textContent=locked?"🔒 Locked":"🔒 Save & Lock";
+ });
+ update();
+}
+function update(){
+ let n=0;
+ if(data.spourts)n++;if(data.milk)n++;
+ if(data.breakfastLocked&&data.breakfast.trim())n++;
+ if(data.lunchLocked&&data.lunch.trim())n++;
+ if(data.dinnerLocked&&data.dinner.trim())n++;
+ if(data.egg)n++;if(data.water)n++;
+ const p=Math.round(n/7*100);
+ document.getElementById("percent").textContent=p+"%";
+ document.getElementById("fill").style.width=p+"%";
+ document.getElementById("progressNote").textContent=`${n} of 7 habits completed`;
+}
+function toast(msg){
+ const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");
+ setTimeout(()=>t.classList.remove("show"),1800);
+}
+["spourts","milk","egg","water"].forEach(k=>{
+ document.getElementById(k).addEventListener("change",()=>{
+   if(data[k]){document.getElementById(k).checked=true;return}
+   data[k]=true;save();update();toast("Locked for today ✓");
+ });
+});
+["breakfast","lunch","dinner"].forEach(k=>{
+ document.getElementById(k+"Btn").addEventListener("click",()=>{
+   const v=document.getElementById(k).value.trim();
+   if(!v){toast("Write something first.");return}
+   data[k]=v;data[k+"Locked"]=true;save();render();toast("Saved & locked ✓");
+ });
+});
+setInterval(()=>{
+ const now=dateKey();
+ if(now!==current){current=now;data=empty();render();toast("New day started 🌅");}
+},15000);
+render();
+</script>
+</body>
+</html>
