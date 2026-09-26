@@ -13,9 +13,9 @@
 
 <style>
 
-/* =========================
-   BASIC RESET
-========================= */
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
   box-sizing: border-box;
@@ -23,7 +23,14 @@
   padding: 0;
 }
 
+
+/* =====================================================
+   BODY
+===================================================== */
+
 body {
+
+  min-height: 100vh;
 
   font-family:
     -apple-system,
@@ -33,94 +40,36 @@ body {
     Arial,
     sans-serif;
 
-  min-height: 100vh;
-
-  color: white;
-
-  padding: 18px 12px 40px;
-
-  overflow-x: hidden;
+  color: #ffffff;
 
   background:
     radial-gradient(
       circle at 10% 10%,
-      rgba(0,255,170,.12),
+      rgba(0,255,160,0.13),
       transparent 30%
     ),
     radial-gradient(
-      circle at 90% 20%,
-      rgba(0,180,255,.12),
+      circle at 90% 90%,
+      rgba(0,150,255,0.12),
       transparent 30%
     ),
     linear-gradient(
       135deg,
       #06110c,
-      #0a1711,
+      #0b1812,
       #06100c
     );
+
+  padding:
+    18px 12px 40px;
+
+  overflow-x: hidden;
 }
 
 
-/* =========================
-   BACKGROUND ANIMATION
-========================= */
-
-body::before,
-body::after {
-
-  content: "";
-
-  position: fixed;
-
-  width: 220px;
-  height: 220px;
-
-  border-radius: 50%;
-
-  filter: blur(65px);
-
-  opacity: .3;
-
-  z-index: -1;
-
-  animation:
-    floating 8s ease-in-out infinite alternate;
-}
-
-body::before {
-
-  background: #00ff99;
-
-  top: -100px;
-  left: -90px;
-}
-
-body::after {
-
-  background: #00aaff;
-
-  right: -100px;
-  bottom: -100px;
-
-  animation-delay: 2s;
-}
-
-@keyframes floating {
-
-  from {
-    transform: translate(0,0);
-  }
-
-  to {
-    transform: translate(40px,30px);
-  }
-
-}
-
-
-/* =========================
-   MAIN
-========================= */
+/* =====================================================
+   CONTAINER
+===================================================== */
 
 .container {
 
@@ -128,45 +77,40 @@ body::after {
 
   max-width: 650px;
 
-  margin: auto;
+  margin: 0 auto;
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 .header {
 
   text-align: center;
 
   margin-bottom: 20px;
-
-  animation:
-    fadeDown .7s ease;
 }
 
 .logo {
 
-  font-size: 42px;
+  font-size: 40px;
 
   margin-bottom: 3px;
 }
 
-h1 {
+.title {
 
-  font-size: 30px;
+  font-size: 29px;
 
   font-weight: 800;
-
-  letter-spacing: -.5px;
 }
 
 .subtitle {
 
-  color: #91a69d;
+  color: #91a39b;
 
-  font-size: 14px;
+  font-size: 13px;
 
   margin-top: 5px;
 }
@@ -175,69 +119,61 @@ h1 {
 
   color: #00ff9d;
 
-  font-size: 14px;
+  font-size: 13px;
 
   font-weight: 700;
 
-  margin-top: 9px;
-}
-
-@keyframes fadeDown {
-
-  from {
-
-    opacity: 0;
-
-    transform:
-      translateY(-20px);
-
-  }
-
-  to {
-
-    opacity: 1;
-
-    transform:
-      translateY(0);
-
-  }
-
+  margin-top: 8px;
 }
 
 
-/* =========================
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+
+  text-align: center;
+
+  font-size: 11px;
+
+  color: #73857d;
+
+  margin-top: 8px;
+
+  min-height: 16px;
+}
+
+
+/* =====================================================
    PROGRESS CARD
-========================= */
+===================================================== */
 
 .progress-card {
 
-  background:
-    rgba(255,255,255,.055);
+  padding: 18px;
 
-  border:
-    1px solid rgba(255,255,255,.1);
-
-  backdrop-filter:
-    blur(18px);
+  margin-bottom: 16px;
 
   border-radius: 22px;
 
-  padding: 18px;
+  background:
+    rgba(255,255,255,0.055);
 
-  margin-bottom: 18px;
+  border:
+    1px solid rgba(255,255,255,0.09);
 
-  box-shadow:
-    0 15px 40px
-    rgba(0,0,0,.25);
+  backdrop-filter:
+    blur(15px);
 }
 
-.progress-top {
+.progress-header {
 
   display: flex;
 
-  align-items: center;
-
   justify-content: space-between;
+
+  align-items: center;
 
   margin-bottom: 10px;
 }
@@ -255,7 +191,7 @@ h1 {
 
   font-size: 16px;
 
-  font-weight: 850;
+  font-weight: 800;
 }
 
 .progress-bar {
@@ -265,7 +201,7 @@ h1 {
   height: 11px;
 
   background:
-    rgba(255,255,255,.08);
+    rgba(255,255,255,0.08);
 
   border-radius: 20px;
 
@@ -274,21 +210,21 @@ h1 {
 
 .progress-fill {
 
-  height: 100%;
-
   width: 0%;
+
+  height: 100%;
 
   border-radius: 20px;
 
   background:
     linear-gradient(
       90deg,
-      #00c878,
+      #00c978,
       #00ff9d
     );
 
   transition:
-    width .45s ease;
+    width 0.35s ease;
 }
 
 .progress-count {
@@ -301,9 +237,9 @@ h1 {
 }
 
 
-/* =========================
+/* =====================================================
    HABITS
-========================= */
+===================================================== */
 
 .habits {
 
@@ -314,67 +250,43 @@ h1 {
   gap: 12px;
 }
 
+
+/* =====================================================
+   CARD
+===================================================== */
+
 .card {
 
-  background:
-    rgba(255,255,255,.055);
-
-  border:
-    1px solid rgba(255,255,255,.09);
-
-  backdrop-filter:
-    blur(16px);
+  padding: 15px;
 
   border-radius: 20px;
 
-  padding: 16px;
+  background:
+    rgba(255,255,255,0.055);
 
-  box-shadow:
-    0 10px 30px
-    rgba(0,0,0,.16);
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter:
+    blur(15px);
 
   transition:
-    .25s ease;
-
-  animation:
-    cardIn .5s ease both;
+    0.25s ease;
 }
 
-.card:hover {
-
-  transform:
-    translateY(-2px);
+.card.locked {
 
   border-color:
-    rgba(0,255,157,.3);
-}
+    rgba(0,255,157,0.30);
 
-@keyframes cardIn {
-
-  from {
-
-    opacity: 0;
-
-    transform:
-      translateY(12px);
-
-  }
-
-  to {
-
-    opacity: 1;
-
-    transform:
-      translateY(0);
-
-  }
-
+  background:
+    rgba(0,255,157,0.055);
 }
 
 
-/* =========================
+/* =====================================================
    CARD ROW
-========================= */
+===================================================== */
 
 .card-row {
 
@@ -393,16 +305,16 @@ h1 {
 
   align-items: center;
 
-  gap: 13px;
+  gap: 12px;
 
   min-width: 0;
 }
 
 .icon {
 
-  width: 44px;
+  width: 43px;
 
-  height: 44px;
+  height: 43px;
 
   flex-shrink: 0;
 
@@ -412,39 +324,34 @@ h1 {
 
   justify-content: center;
 
-  border-radius: 14px;
+  border-radius: 13px;
 
   background:
-    rgba(0,255,157,.08);
+    rgba(0,255,157,0.08);
 
-  font-size: 23px;
-}
-
-.card-info {
-
-  min-width: 0;
+  font-size: 22px;
 }
 
 .card-title {
 
-  font-size: 16px;
+  font-size: 15px;
 
   font-weight: 750;
 }
 
 .card-subtitle {
 
-  color: #899b93;
+  color: #84968e;
 
-  font-size: 12px;
+  font-size: 11px;
 
   margin-top: 3px;
 }
 
 
-/* =========================
+/* =====================================================
    CHECKBOX
-========================= */
+===================================================== */
 
 .check {
 
@@ -452,97 +359,74 @@ h1 {
 
   height: 25px;
 
+  flex-shrink: 0;
+
   accent-color:
     #00e98d;
-
-  cursor: pointer;
-}
-
-.check:disabled {
-
-  opacity: 1;
-
-  cursor: not-allowed;
 }
 
 
-/* =========================
-   LOCKED
-========================= */
-
-.locked {
-
-  border-color:
-    rgba(0,255,157,.3);
-
-  background:
-    rgba(0,255,157,.055);
-}
-
-
-/* =========================
-   TEXTAREA
-========================= */
+/* =====================================================
+   TEXT AREA
+===================================================== */
 
 .text-area {
 
   width: 100%;
 
-  min-height: 85px;
+  min-height: 82px;
+
+  margin-top: 12px;
+
+  padding: 12px;
 
   resize: vertical;
 
-  margin-top: 13px;
-
-  padding: 13px;
-
-  border-radius: 14px;
-
-  border:
-    1px solid rgba(255,255,255,.1);
-
   outline: none;
 
-  background:
-    rgba(0,0,0,.25);
+  border-radius: 13px;
 
-  color: white;
+  border:
+    1px solid rgba(255,255,255,0.10);
+
+  background:
+    rgba(0,0,0,0.23);
+
+  color: #ffffff;
 
   font-family: inherit;
 
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .text-area::placeholder {
 
-  color: #687a72;
+  color: #65766f;
 }
 
 .text-area:focus {
 
   border-color:
-    rgba(0,255,157,.5);
+    rgba(0,255,157,0.45);
 }
 
 .text-area:disabled {
 
-  opacity: .75;
-
-  cursor: not-allowed;
+  opacity: 0.70;
 }
 
 
-/* =========================
+/* =====================================================
    BUTTON
-========================= */
+===================================================== */
 
 .save-btn {
 
   width: 100%;
 
-  margin-top: 10px;
+  margin-top: 9px;
 
-  padding: 12px 15px;
+  padding: 12px;
 
   border: none;
 
@@ -557,119 +441,98 @@ h1 {
 
   color: #04130d;
 
-  font-size: 14px;
+  font-size: 13px;
 
   font-weight: 800;
-
-  cursor: pointer;
-
-  transition:
-    .2s ease;
-}
-
-.save-btn:active {
-
-  transform:
-    scale(.98);
 }
 
 .save-btn:disabled {
 
   background:
-    rgba(255,255,255,.1);
+    rgba(255,255,255,0.10);
 
-  color: #84958e;
-
-  cursor: not-allowed;
+  color: #7d8d87;
 }
 
 
-/* =========================
+/* =====================================================
    JUNK FOOD
-========================= */
+===================================================== */
 
 .junk-note {
 
-  color: #9ba9a3;
+  color: #8b9c95;
 
-  font-size: 12px;
-
-  margin-top: 5px;
+  font-size: 11px;
 
   line-height: 1.4;
+
+  margin-top: 4px;
 }
 
 .junk-input {
 
   width: 100%;
 
-  margin-top: 10px;
+  margin-top: 9px;
 
   padding: 12px;
 
   border-radius: 12px;
 
   border:
-    1px solid rgba(255,255,255,.1);
+    1px solid rgba(255,255,255,0.10);
 
   outline: none;
 
   background:
-    rgba(0,0,0,.25);
+    rgba(0,0,0,0.23);
 
   color: white;
 
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .junk-input::placeholder {
 
-  color: #687a72;
-}
-
-.junk-input:focus {
-
-  border-color:
-    rgba(0,255,157,.5);
+  color: #65766f;
 }
 
 .junk-input:disabled {
 
-  opacity: .75;
-
-  cursor: not-allowed;
+  opacity: 0.70;
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer {
 
   text-align: center;
 
-  margin-top: 25px;
+  color: #61716a;
 
-  color: #65746e;
+  font-size: 10px;
 
-  font-size: 11px;
+  margin-top: 22px;
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 420px) {
 
   body {
 
     padding:
-      16px 10px 30px;
+      14px 9px 30px;
   }
 
-  h1 {
+  .title {
 
     font-size: 27px;
   }
@@ -677,20 +540,6 @@ h1 {
   .card {
 
     padding: 14px;
-  }
-
-  .icon {
-
-    width: 40px;
-
-    height: 40px;
-
-    font-size: 21px;
-  }
-
-  .card-title {
-
-    font-size: 15px;
   }
 
 }
@@ -705,9 +554,9 @@ h1 {
 <div class="container">
 
 
-<!-- =========================
+<!-- ===================================================
      HEADER
-========================= -->
+=================================================== -->
 
 <header class="header">
 
@@ -715,9 +564,9 @@ h1 {
     🔥
   </div>
 
-  <h1>
+  <div class="title">
     Daily Discipline
-  </h1>
+  </div>
 
   <div class="subtitle">
     Small actions. Every single day.
@@ -728,16 +577,23 @@ h1 {
     id="todayDate"
   ></div>
 
+  <div
+    class="status"
+    id="syncStatus"
+  >
+    Ready
+  </div>
+
 </header>
 
 
-<!-- =========================
+<!-- ===================================================
      PROGRESS
-========================= -->
+=================================================== -->
 
 <section class="progress-card">
 
-  <div class="progress-top">
+  <div class="progress-header">
 
     <div class="progress-title">
       Today's Progress
@@ -773,9 +629,9 @@ h1 {
 </section>
 
 
-<!-- =========================
+<!-- ===================================================
      HABITS
-========================= -->
+=================================================== -->
 
 <main class="habits">
 
@@ -792,7 +648,7 @@ h1 {
         🌾
       </div>
 
-      <div class="card-info">
+      <div>
 
         <div class="card-title">
           Spourts
@@ -808,10 +664,9 @@ h1 {
 
 
     <input
-      type="checkbox"
       class="check"
+      type="checkbox"
       id="spourts"
-      onchange="completeCheckbox('spourts')"
     >
 
   </div>
@@ -831,22 +686,17 @@ h1 {
         🥛
       </div>
 
-      <div class="card-info">
-
-        <div class="card-title">
-          Milk
-        </div>
-
+      <div class="card-title">
+        Milk
       </div>
 
     </div>
 
 
     <input
-      type="checkbox"
       class="check"
+      type="checkbox"
       id="milk"
-      onchange="completeCheckbox('milk')"
     >
 
   </div>
@@ -866,22 +716,17 @@ h1 {
         🍎
       </div>
 
-      <div class="card-info">
-
-        <div class="card-title">
-          Fruits
-        </div>
-
+      <div class="card-title">
+        Fruits
       </div>
 
     </div>
 
 
     <input
-      type="checkbox"
       class="check"
+      type="checkbox"
       id="fruits"
-      onchange="completeCheckbox('fruits')"
     >
 
   </div>
@@ -901,22 +746,17 @@ h1 {
         🍌
       </div>
 
-      <div class="card-info">
-
-        <div class="card-title">
-          1 Banana
-        </div>
-
+      <div class="card-title">
+        1 Banana
       </div>
 
     </div>
 
 
     <input
-      type="checkbox"
       class="check"
+      type="checkbox"
       id="banana"
-      onchange="completeCheckbox('banana')"
     >
 
   </div>
@@ -937,7 +777,7 @@ h1 {
       🍳
     </div>
 
-    <div class="card-info">
+    <div>
 
       <div class="card-title">
         Breakfast
@@ -962,7 +802,6 @@ h1 {
   <button
     class="save-btn"
     id="breakfastBtn"
-    onclick="lockMeal('breakfast')"
   >
     Save & Lock
   </button>
@@ -983,7 +822,7 @@ h1 {
       🍛
     </div>
 
-    <div class="card-info">
+    <div>
 
       <div class="card-title">
         Lunch
@@ -1008,7 +847,6 @@ h1 {
   <button
     class="save-btn"
     id="lunchBtn"
-    onclick="lockMeal('lunch')"
   >
     Save & Lock
   </button>
@@ -1029,7 +867,7 @@ h1 {
       🍽️
     </div>
 
-    <div class="card-info">
+    <div>
 
       <div class="card-title">
         Dinner
@@ -1054,7 +892,6 @@ h1 {
   <button
     class="save-btn"
     id="dinnerBtn"
-    onclick="lockMeal('dinner')"
   >
     Save & Lock
   </button>
@@ -1074,22 +911,17 @@ h1 {
         🥚
       </div>
 
-      <div class="card-info">
-
-        <div class="card-title">
-          Egg
-        </div>
-
+      <div class="card-title">
+        Egg
       </div>
 
     </div>
 
 
     <input
-      type="checkbox"
       class="check"
+      type="checkbox"
       id="egg"
-      onchange="completeCheckbox('egg')"
     >
 
   </div>
@@ -1109,7 +941,7 @@ h1 {
         💧
       </div>
 
-      <div class="card-info">
+      <div>
 
         <div class="card-title">
           Water
@@ -1125,10 +957,9 @@ h1 {
 
 
     <input
-      type="checkbox"
       class="check"
+      type="checkbox"
       id="water"
-      onchange="completeCheckbox('water')"
     >
 
   </div>
@@ -1149,7 +980,7 @@ h1 {
       🍔
     </div>
 
-    <div class="card-info">
+    <div>
 
       <div class="card-title">
         Junk Food
@@ -1166,25 +997,25 @@ h1 {
 
 
   <input
-    type="text"
     class="junk-input"
     id="junk1"
+    type="text"
     placeholder="Junk Food 1"
   >
 
 
   <input
-    type="text"
     class="junk-input"
     id="junk2"
+    type="text"
     placeholder="Junk Food 2"
   >
 
 
   <input
-    type="text"
     class="junk-input"
     id="junk3"
+    type="text"
     placeholder="Junk Food 3"
   >
 
@@ -1192,7 +1023,6 @@ h1 {
   <button
     class="save-btn"
     id="junkBtn"
-    onclick="lockJunk()"
   >
     Save & Lock
   </button>
@@ -1204,7 +1034,7 @@ h1 {
 
 
 <div class="footer">
-  Daily Discipline • Your progress is saved automatically.
+  Daily Discipline • Your daily data is saved.
 </div>
 
 
@@ -1214,7 +1044,7 @@ h1 {
 <script>
 
 /* =====================================================
-   GOOGLE APPS SCRIPT
+   1. GOOGLE APPS SCRIPT URL
 ===================================================== */
 
 const EMAIL_BACKEND_URL =
@@ -1222,27 +1052,70 @@ const EMAIL_BACKEND_URL =
 
 
 /* =====================================================
-   STORAGE
+   2. STORAGE
 ===================================================== */
 
 const STORAGE_KEY =
-"daily_discipline_v4";
+"daily_discipline_debug_v1";
 
 const HISTORY_KEY =
-"daily_discipline_history_v1";
-
-
-let currentDay;
+"daily_discipline_history_debug_v1";
 
 
 /* =====================================================
-   GET TODAY
+   3. CURRENT DAY
+===================================================== */
+
+let currentDay = createEmptyDay();
+
+
+/* =====================================================
+   4. EMPTY DAY
+===================================================== */
+
+function createEmptyDay() {
+
+  return {
+
+    spourts: false,
+
+    milk: false,
+
+    fruits: false,
+
+    banana: false,
+
+    breakfast: "",
+    breakfastLocked: false,
+
+    lunch: "",
+    lunchLocked: false,
+
+    dinner: "",
+    dinnerLocked: false,
+
+    egg: false,
+
+    water: false,
+
+    junk1: "",
+    junk2: "",
+    junk3: "",
+
+    junkLocked: false
+
+  };
+
+}
+
+
+/* =====================================================
+   5. DATE KEY
 ===================================================== */
 
 function getDateKey() {
 
-  const now =
-    new Date();
+  const now = new Date();
 
   const year =
     now.getFullYear();
@@ -1269,193 +1142,58 @@ function getDateKey() {
 
 
 /* =====================================================
-   EMPTY DAY
+   6. DATE DISPLAY
 ===================================================== */
 
-function emptyDay() {
+function displayDate() {
 
-  return {
+  const now = new Date();
 
-    spourts: false,
-
-    milk: false,
-
-    fruits: false,
-
-    banana: false,
-
-    breakfast: "",
-
-    breakfastLocked: false,
-
-    lunch: "",
-
-    lunchLocked: false,
-
-    dinner: "",
-
-    dinnerLocked: false,
-
-    egg: false,
-
-    water: false,
-
-    junk1: "",
-
-    junk2: "",
-
-    junk3: "",
-
-    junkLocked: false
-
-  };
+  document.getElementById(
+    "todayDate"
+  ).textContent =
+    now.toLocaleDateString(
+      "en-IN",
+      {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }
+    );
 
 }
 
 
 /* =====================================================
-   SAVE LOCAL DATA
+   7. STATUS
 ===================================================== */
 
-function saveLocalData() {
+function setStatus(message) {
 
-  const date =
-    getDateKey();
+  const element =
+    document.getElementById(
+      "syncStatus"
+    );
 
+  if (element) {
 
-  /* Current day */
-
-  localStorage.setItem(
-
-    STORAGE_KEY,
-
-    JSON.stringify({
-
-      date: date,
-
-      data: currentDay
-
-    })
-
-  );
-
-
-  /* History */
-
-  let history = {};
-
-  try {
-
-    history =
-      JSON.parse(
-        localStorage.getItem(
-          HISTORY_KEY
-        )
-      ) || {};
+    element.textContent =
+      message;
 
   }
 
-  catch(error) {
-
-    history = {};
-
-  }
-
-
-  history[date] =
-    currentDay;
-
-
-  localStorage.setItem(
-
-    HISTORY_KEY,
-
-    JSON.stringify(history)
-
-  );
-
 }
 
 
 /* =====================================================
-   SEND TO GOOGLE APPS SCRIPT
-===================================================== */
-
-function sendToEmailBackend() {
-
-  const date =
-    getDateKey();
-
-
-  const payload = {
-
-    date: date,
-
-    data: currentDay
-
-  };
-
-
-  fetch(
-
-    EMAIL_BACKEND_URL,
-
-    {
-
-      method: "POST",
-
-      mode: "no-cors",
-
-      headers: {
-
-        "Content-Type":
-          "text/plain"
-
-      },
-
-      body:
-        JSON.stringify(payload)
-
-    }
-
-  ).catch(
-
-    function(error) {
-
-      console.log(
-        "Backend sync failed:",
-        error
-      );
-
-    }
-
-  );
-
-}
-
-
-/* =====================================================
-   SAVE EVERYTHING
-===================================================== */
-
-function saveDay() {
-
-  saveLocalData();
-
-  sendToEmailBackend();
-
-}
-
-
-/* =====================================================
-   LOAD TODAY
+   8. LOAD TODAY
 ===================================================== */
 
 function loadToday() {
 
   const today =
     getDateKey();
-
 
   let saved = null;
 
@@ -1473,20 +1211,27 @@ function loadToday() {
 
   catch(error) {
 
-    saved = null;
+    console.log(
+      "Local storage read error:",
+      error
+    );
 
   }
 
 
   if (
+
     saved &&
+
     saved.date === today &&
+
     saved.data
+
   ) {
 
     currentDay =
       Object.assign(
-        emptyDay(),
+        createEmptyDay(),
         saved.data
       );
 
@@ -1495,71 +1240,278 @@ function loadToday() {
   else {
 
     currentDay =
-      emptyDay();
+      createEmptyDay();
 
   }
 
 
-  render();
+  renderAll();
 
   updateProgress();
+
+  setStatus(
+    "Data saved on this device"
+  );
 
 }
 
 
 /* =====================================================
-   CHECKBOX HABITS
+   9. SAVE LOCALLY
 ===================================================== */
 
-function completeCheckbox(key) {
+function saveLocal() {
 
-  currentDay[key] =
-    true;
+  const date =
+    getDateKey();
 
 
-  const checkbox =
-    document.getElementById(
-      key
+  try {
+
+    localStorage.setItem(
+
+      STORAGE_KEY,
+
+      JSON.stringify({
+
+        date: date,
+
+        data: currentDay
+
+      })
+
     );
 
 
-  if (checkbox) {
+    let history = {};
 
-    checkbox.checked =
+
+    try {
+
+      history =
+        JSON.parse(
+          localStorage.getItem(
+            HISTORY_KEY
+          )
+        ) || {};
+
+    }
+
+    catch(error) {
+
+      history = {};
+
+    }
+
+
+    history[date] =
+      currentDay;
+
+
+    localStorage.setItem(
+
+      HISTORY_KEY,
+
+      JSON.stringify(history)
+
+    );
+
+
+  }
+
+  catch(error) {
+
+    console.log(
+      "Save error:",
+      error
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   10. SEND DATA TO APPS SCRIPT
+===================================================== */
+
+function sendToBackend() {
+
+  const payload = {
+
+    date:
+      getDateKey(),
+
+    data:
+      currentDay
+
+  };
+
+
+  setStatus(
+    "Saving..."
+  );
+
+
+  fetch(
+
+    EMAIL_BACKEND_URL,
+
+    {
+
+      method: "POST",
+
+      mode: "no-cors",
+
+      headers: {
+
+        "Content-Type":
+          "text/plain;charset=utf-8"
+
+      },
+
+      body:
+        JSON.stringify(
+          payload
+        )
+
+    }
+
+  )
+
+  .then(
+
+    function() {
+
+      /*
+        With no-cors the browser cannot
+        read the response, but the request
+        has been sent.
+      */
+
+      setStatus(
+        "Saved ✓"
+      );
+
+    }
+
+  )
+
+  .catch(
+
+    function(error) {
+
+      console.log(
+        "Backend error:",
+        error
+      );
+
+      setStatus(
+        "Saved locally"
+      );
+
+    }
+
+  );
+
+}
+
+
+/* =====================================================
+   11. SAVE EVERYTHING
+===================================================== */
+
+function saveEverything() {
+
+  saveLocal();
+
+  sendToBackend();
+
+}
+
+
+/* =====================================================
+   12. CHECKBOX HABITS
+===================================================== */
+
+const checkboxNames = [
+
+  "spourts",
+  "milk",
+  "fruits",
+  "banana",
+  "egg",
+  "water"
+
+];
+
+
+function handleCheckbox(name) {
+
+  const checkbox =
+    document.getElementById(
+      name
+    );
+
+
+  if (!checkbox)
+    return;
+
+
+  /*
+    Only allow checking.
+    Once checked it cannot
+    be unchecked that day.
+  */
+
+  if (checkbox.checked) {
+
+    currentDay[name] =
       true;
 
     checkbox.disabled =
       true;
 
+
+    /*
+      Update progress FIRST.
+      This guarantees the UI
+      changes immediately.
+    */
+
+    updateProgress();
+
+
+    /*
+      Then save.
+    */
+
+    saveEverything();
+
   }
-
-
-  saveDay();
-
-  updateProgress();
 
 }
 
 
 /* =====================================================
-   MEAL LOCK
+   13. MEAL LOCK
 ===================================================== */
 
-function lockMeal(key) {
+function lockMeal(name) {
 
   const input =
     document.getElementById(
-      key
+      name
     );
 
   const button =
     document.getElementById(
-      key + "Btn"
+      name + "Btn"
     );
 
   const card =
     document.getElementById(
-      key + "Card"
+      name + "Card"
     );
 
 
@@ -1567,11 +1519,11 @@ function lockMeal(key) {
     return;
 
 
-  const value =
+  const text =
     input.value.trim();
 
 
-  if (value === "") {
+  if (text.length === 0) {
 
     alert(
       "Please enter what you ate first."
@@ -1582,16 +1534,15 @@ function lockMeal(key) {
   }
 
 
-  currentDay[key] =
-    value;
+  currentDay[name] =
+    text;
 
-  currentDay[key + "Locked"] =
+  currentDay[name + "Locked"] =
     true;
 
 
   input.disabled =
     true;
-
 
   button.disabled =
     true;
@@ -1605,15 +1556,24 @@ function lockMeal(key) {
   );
 
 
-  saveDay();
+  /*
+    Update immediately.
+  */
 
   updateProgress();
+
+
+  /*
+    Save.
+  */
+
+  saveEverything();
 
 }
 
 
 /* =====================================================
-   JUNK FOOD LOCK
+   14. JUNK FOOD LOCK
 ===================================================== */
 
 function lockJunk() {
@@ -1633,6 +1593,11 @@ function lockJunk() {
       "junk3"
     );
 
+  const button =
+    document.getElementById(
+      "junkBtn"
+    );
+
 
   currentDay.junk1 =
     input1.value.trim();
@@ -1642,7 +1607,6 @@ function lockJunk() {
 
   currentDay.junk3 =
     input3.value.trim();
-
 
   currentDay.junkLocked =
     true;
@@ -1656,13 +1620,6 @@ function lockJunk() {
 
   input3.disabled =
     true;
-
-
-  const button =
-    document.getElementById(
-      "junkBtn"
-    );
-
 
   button.disabled =
     true;
@@ -1680,114 +1637,17 @@ function lockJunk() {
     );
 
 
-  saveDay();
+  /*
+    Junk food does NOT
+    affect progress.
+  */
+
+
+  saveEverything();
 
 }
 
 
 /* =====================================================
-   CALCULATE PROGRESS
-===================================================== */
-
-function calculateProgress() {
-
-  let completed = 0;
-
-
-  /*
-    1. SPOURTS
-  */
-
-  if (
-    currentDay.spourts === true
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    2. MILK
-  */
-
-  if (
-    currentDay.milk === true
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    3. FRUITS
-  */
-
-  if (
-    currentDay.fruits === true
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    4. BANANA
-  */
-
-  if (
-    currentDay.banana === true
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    5. BREAKFAST
-  */
-
-  if (
-
-    currentDay.breakfastLocked === true &&
-
-    typeof currentDay.breakfast === "string" &&
-
-    currentDay.breakfast.trim() !== ""
-
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    6. LUNCH
-  */
-
-  if (
-
-    currentDay.lunchLocked === true &&
-
-    typeof currentDay.lunch === "string" &&
-
-    currentDay.lunch.trim() !== ""
-
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    7. DINNER
-  */
-
-  if (
-
-    currentDay.dinnerLocked === true &
+   15. CALCULATE PROGRESS
+=============================================
