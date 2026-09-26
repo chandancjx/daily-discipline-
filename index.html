@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 
 <meta
@@ -12,6 +13,10 @@
 
 <style>
 
+/* =========================
+   BASIC RESET
+========================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,6 +24,7 @@
 }
 
 body {
+
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -28,6 +34,12 @@ body {
     sans-serif;
 
   min-height: 100vh;
+
+  color: white;
+
+  padding: 18px 12px 40px;
+
+  overflow-x: hidden;
 
   background:
     radial-gradient(
@@ -42,24 +54,22 @@ body {
     ),
     linear-gradient(
       135deg,
-      #07120e,
-      #0b1712,
-      #07110d
+      #06110c,
+      #0a1711,
+      #06100c
     );
-
-  color: #ffffff;
-
-  padding: 20px 14px 40px;
-
-  overflow-x: hidden;
 }
 
 
-/* Animated background */
+/* =========================
+   BACKGROUND ANIMATION
+========================= */
 
 body::before,
 body::after {
+
   content: "";
+
   position: fixed;
 
   width: 220px;
@@ -67,63 +77,67 @@ body::after {
 
   border-radius: 50%;
 
-  filter: blur(60px);
+  filter: blur(65px);
 
-  opacity: .35;
+  opacity: .3;
 
   z-index: -1;
 
   animation:
-    floatBlob 8s ease-in-out infinite alternate;
+    floating 8s ease-in-out infinite alternate;
 }
 
 body::before {
+
   background: #00ff99;
 
-  top: -80px;
-  left: -80px;
+  top: -100px;
+  left: -90px;
 }
 
 body::after {
+
   background: #00aaff;
 
-  right: -90px;
-  bottom: -80px;
+  right: -100px;
+  bottom: -100px;
 
   animation-delay: 2s;
 }
 
-@keyframes floatBlob {
+@keyframes floating {
 
   from {
-    transform: translate(
-      0,
-      0
-    );
+    transform: translate(0,0);
   }
 
   to {
-    transform: translate(
-      40px,
-      30px
-    );
+    transform: translate(40px,30px);
   }
+
 }
 
 
-/* Main container */
+/* =========================
+   MAIN
+========================= */
 
 .container {
+
   width: 100%;
+
   max-width: 650px;
 
   margin: auto;
 }
 
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 
 .header {
+
   text-align: center;
 
   margin-bottom: 20px;
@@ -132,33 +146,25 @@ body::after {
     fadeDown .7s ease;
 }
 
-@keyframes fadeDown {
-
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .logo {
+
   font-size: 42px;
-  margin-bottom: 4px;
+
+  margin-bottom: 3px;
 }
 
 h1 {
+
   font-size: 30px;
+
   font-weight: 800;
 
   letter-spacing: -.5px;
 }
 
 .subtitle {
-  color: #9bb1a8;
+
+  color: #91a69d;
 
   font-size: 14px;
 
@@ -166,26 +172,53 @@ h1 {
 }
 
 .date {
-  margin-top: 10px;
 
   color: #00ff9d;
 
   font-size: 14px;
-  font-weight: 600;
+
+  font-weight: 700;
+
+  margin-top: 9px;
+}
+
+@keyframes fadeDown {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(-20px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
 }
 
 
-/* Progress */
+/* =========================
+   PROGRESS CARD
+========================= */
 
 .progress-card {
+
   background:
-    rgba(255,255,255,.06);
+    rgba(255,255,255,.055);
 
   border:
     1px solid rgba(255,255,255,.1);
 
   backdrop-filter:
-    blur(15px);
+    blur(18px);
 
   border-radius: 22px;
 
@@ -199,28 +232,34 @@ h1 {
 }
 
 .progress-top {
+
   display: flex;
 
-  justify-content: space-between;
-
   align-items: center;
+
+  justify-content: space-between;
 
   margin-bottom: 10px;
 }
 
 .progress-title {
+
   font-size: 15px;
 
-  font-weight: 700;
+  font-weight: 750;
 }
 
 .progress-percent {
+
   color: #00ff9d;
 
-  font-weight: 800;
+  font-size: 16px;
+
+  font-weight: 850;
 }
 
 .progress-bar {
+
   width: 100%;
 
   height: 11px;
@@ -234,6 +273,7 @@ h1 {
 }
 
 .progress-fill {
+
   height: 100%;
 
   width: 0%;
@@ -248,13 +288,25 @@ h1 {
     );
 
   transition:
-    width .5s ease;
+    width .45s ease;
+}
+
+.progress-count {
+
+  margin-top: 8px;
+
+  color: #81938b;
+
+  font-size: 12px;
 }
 
 
-/* Habit cards */
+/* =========================
+   HABITS
+========================= */
 
 .habits {
+
   display: flex;
 
   flex-direction: column;
@@ -263,6 +315,7 @@ h1 {
 }
 
 .card {
+
   background:
     rgba(255,255,255,.055);
 
@@ -276,19 +329,21 @@ h1 {
 
   padding: 16px;
 
-  transition:
-    .25s ease;
-
   box-shadow:
     0 10px 30px
-    rgba(0,0,0,.15);
+    rgba(0,0,0,.16);
+
+  transition:
+    .25s ease;
 
   animation:
     cardIn .5s ease both;
 }
 
 .card:hover {
-  transform: translateY(-2px);
+
+  transform:
+    translateY(-2px);
 
   border-color:
     rgba(0,255,157,.3);
@@ -297,17 +352,32 @@ h1 {
 @keyframes cardIn {
 
   from {
+
     opacity: 0;
-    transform: translateY(12px);
+
+    transform:
+      translateY(12px);
+
   }
 
   to {
+
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
+
   }
+
 }
 
+
+/* =========================
+   CARD ROW
+========================= */
+
 .card-row {
+
   display: flex;
 
   align-items: center;
@@ -318,6 +388,7 @@ h1 {
 }
 
 .card-left {
+
   display: flex;
 
   align-items: center;
@@ -328,7 +399,9 @@ h1 {
 }
 
 .icon {
+
   width: 44px;
+
   height: 44px;
 
   flex-shrink: 0;
@@ -336,6 +409,7 @@ h1 {
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
   border-radius: 14px;
@@ -347,17 +421,20 @@ h1 {
 }
 
 .card-info {
+
   min-width: 0;
 }
 
 .card-title {
+
   font-size: 16px;
 
   font-weight: 750;
 }
 
 .card-subtitle {
-  color: #8da198;
+
+  color: #899b93;
 
   font-size: 12px;
 
@@ -365,14 +442,14 @@ h1 {
 }
 
 
-/* Checkbox */
-
-.check-wrap {
-  flex-shrink: 0;
-}
+/* =========================
+   CHECKBOX
+========================= */
 
 .check {
+
   width: 25px;
+
   height: 25px;
 
   accent-color:
@@ -382,32 +459,33 @@ h1 {
 }
 
 .check:disabled {
+
   opacity: 1;
+
+  cursor: not-allowed;
 }
 
 
-/* Locked */
+/* =========================
+   LOCKED
+========================= */
 
 .locked {
+
   border-color:
     rgba(0,255,157,.3);
 
   background:
-    rgba(0,255,157,.06);
-}
-
-.lock-text {
-  font-size: 12px;
-
-  color: #00ff9d;
-
-  margin-top: 8px;
+    rgba(0,255,157,.055);
 }
 
 
-/* Text areas */
+/* =========================
+   TEXTAREA
+========================= */
 
 .text-area {
+
   width: 100%;
 
   min-height: 85px;
@@ -436,24 +514,30 @@ h1 {
 }
 
 .text-area::placeholder {
-  color: #6f8179;
+
+  color: #687a72;
 }
 
 .text-area:focus {
+
   border-color:
     rgba(0,255,157,.5);
 }
 
 .text-area:disabled {
+
   opacity: .75;
 
   cursor: not-allowed;
 }
 
 
-/* Save button */
+/* =========================
+   BUTTON
+========================= */
 
 .save-btn {
+
   width: 100%;
 
   margin-top: 10px;
@@ -484,10 +568,13 @@ h1 {
 }
 
 .save-btn:active {
-  transform: scale(.98);
+
+  transform:
+    scale(.98);
 }
 
 .save-btn:disabled {
+
   background:
     rgba(255,255,255,.1);
 
@@ -497,14 +584,13 @@ h1 {
 }
 
 
-/* Junk food */
-
-.junk-card {
-  margin-top: 4px;
-}
+/* =========================
+   JUNK FOOD
+========================= */
 
 .junk-note {
-  color: #a4b1ac;
+
+  color: #9ba9a3;
 
   font-size: 12px;
 
@@ -514,6 +600,7 @@ h1 {
 }
 
 .junk-input {
+
   width: 100%;
 
   margin-top: 10px;
@@ -536,62 +623,80 @@ h1 {
 }
 
 .junk-input::placeholder {
-  color: #6f8179;
+
+  color: #687a72;
 }
 
 .junk-input:focus {
+
   border-color:
     rgba(0,255,157,.5);
 }
 
 .junk-input:disabled {
+
   opacity: .75;
+
+  cursor: not-allowed;
 }
 
 
-/* Footer */
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
+
   text-align: center;
 
   margin-top: 25px;
 
-  color: #66756f;
+  color: #65746e;
 
   font-size: 11px;
 }
 
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 420px) {
 
   body {
+
     padding:
       16px 10px 30px;
   }
 
   h1 {
+
     font-size: 27px;
   }
 
   .card {
+
     padding: 14px;
   }
 
   .icon {
+
     width: 40px;
+
     height: 40px;
 
     font-size: 21px;
   }
 
   .card-title {
+
     font-size: 15px;
   }
+
 }
 
 </style>
+
 </head>
 
 
@@ -599,544 +704,540 @@ h1 {
 
 <div class="container">
 
-  <!-- HEADER -->
 
-  <header class="header">
+<!-- =========================
+     HEADER
+========================= -->
 
-    <div class="logo">
-      🔥
-    </div>
+<header class="header">
 
-    <h1>
-      Daily Discipline
-    </h1>
+  <div class="logo">
+    🔥
+  </div>
 
-    <div class="subtitle">
-      Small actions. Every single day.
+  <h1>
+    Daily Discipline
+  </h1>
+
+  <div class="subtitle">
+    Small actions. Every single day.
+  </div>
+
+  <div
+    class="date"
+    id="todayDate"
+  ></div>
+
+</header>
+
+
+<!-- =========================
+     PROGRESS
+========================= -->
+
+<section class="progress-card">
+
+  <div class="progress-top">
+
+    <div class="progress-title">
+      Today's Progress
     </div>
 
     <div
-      class="date"
-      id="todayDate"
+      class="progress-percent"
+      id="progressPercent"
+    >
+      0%
+    </div>
+
+  </div>
+
+
+  <div class="progress-bar">
+
+    <div
+      class="progress-fill"
+      id="progressFill"
     ></div>
 
-  </header>
-
-
-  <!-- PROGRESS -->
-
-  <section class="progress-card">
-
-    <div class="progress-top">
-
-      <div class="progress-title">
-        Today's Progress
-      </div>
-
-      <div
-        class="progress-percent"
-        id="progressPercent"
-      >
-        0%
-      </div>
-
-    </div>
-
-    <div class="progress-bar">
-
-      <div
-        class="progress-fill"
-        id="progressFill"
-      ></div>
-
-    </div>
-
-    <div
-      style="
-        margin-top:8px;
-        color:#80918a;
-        font-size:12px;
-      "
-      id="progressCount"
-    >
-      0 / 9 completed
-    </div>
-
-  </section>
-
-
-  <!-- HABITS -->
-
-  <main class="habits">
-
-
-    <!-- SPOURTS -->
-
-    <div class="card">
-
-      <div class="card-row">
-
-        <div class="card-left">
-
-          <div class="icon">
-            🌾
-          </div>
-
-          <div class="card-info">
-
-            <div class="card-title">
-              Spourts
-            </div>
-
-            <div class="card-subtitle">
-              Grains & Pulses
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="check-wrap">
-
-          <input
-            type="checkbox"
-            class="check"
-            id="spourts"
-            onchange="completeCheckbox('spourts')"
-          >
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- MILK -->
-
-    <div class="card">
-
-      <div class="card-row">
-
-        <div class="card-left">
-
-          <div class="icon">
-            🥛
-          </div>
-
-          <div class="card-info">
-
-            <div class="card-title">
-              Milk
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="check-wrap">
-
-          <input
-            type="checkbox"
-            class="check"
-            id="milk"
-            onchange="completeCheckbox('milk')"
-          >
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- FRUITS -->
-
-    <div class="card">
-
-      <div class="card-row">
-
-        <div class="card-left">
-
-          <div class="icon">
-            🍎
-          </div>
-
-          <div class="card-info">
-
-            <div class="card-title">
-              Fruits
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="check-wrap">
-
-          <input
-            type="checkbox"
-            class="check"
-            id="fruits"
-            onchange="completeCheckbox('fruits')"
-          >
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- BANANA -->
-
-    <div class="card">
-
-      <div class="card-row">
-
-        <div class="card-left">
-
-          <div class="icon">
-            🍌
-          </div>
-
-          <div class="card-info">
-
-            <div class="card-title">
-              1 Banana
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="check-wrap">
-
-          <input
-            type="checkbox"
-            class="check"
-            id="banana"
-            onchange="completeCheckbox('banana')"
-          >
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- BREAKFAST -->
-
-    <div
-      class="card"
-      id="breakfastCard"
-    >
-
-      <div class="card-left">
-
-        <div class="icon">
-          🍳
-        </div>
-
-        <div class="card-info">
-
-          <div class="card-title">
-            Breakfast
-          </div>
-
-          <div class="card-subtitle">
-            Write what you ate
-          </div>
-
-        </div>
-
-      </div>
-
-      <textarea
-        class="text-area"
-        id="breakfast"
-        placeholder="Example: 4 eggs + oats + banana"
-      ></textarea>
-
-      <button
-        class="save-btn"
-        id="breakfastBtn"
-        onclick="lockMeal('breakfast')"
-      >
-        Save & Lock
-      </button>
-
-    </div>
-
-
-    <!-- LUNCH -->
-
-    <div
-      class="card"
-      id="lunchCard"
-    >
-
-      <div class="card-left">
-
-        <div class="icon">
-          🍛
-        </div>
-
-        <div class="card-info">
-
-          <div class="card-title">
-            Lunch
-          </div>
-
-          <div class="card-subtitle">
-            Write what you ate
-          </div>
-
-        </div>
-
-      </div>
-
-      <textarea
-        class="text-area"
-        id="lunch"
-        placeholder="Example: Rice + chicken + vegetables"
-      ></textarea>
-
-      <button
-        class="save-btn"
-        id="lunchBtn"
-        onclick="lockMeal('lunch')"
-      >
-        Save & Lock
-      </button>
-
-    </div>
-
-
-    <!-- DINNER -->
-
-    <div
-      class="card"
-      id="dinnerCard"
-    >
-
-      <div class="card-left">
-
-        <div class="icon">
-          🍽️
-        </div>
-
-        <div class="card-info">
-
-          <div class="card-title">
-            Dinner
-          </div>
-
-          <div class="card-subtitle">
-            Write what you ate
-          </div>
-
-        </div>
-
-      </div>
-
-      <textarea
-        class="text-area"
-        id="dinner"
-        placeholder="Example: Chicken + rice + salad"
-      ></textarea>
-
-      <button
-        class="save-btn"
-        id="dinnerBtn"
-        onclick="lockMeal('dinner')"
-      >
-        Save & Lock
-      </button>
-
-    </div>
-
-
-    <!-- EGG -->
-
-    <div class="card">
-
-      <div class="card-row">
-
-        <div class="card-left">
-
-          <div class="icon">
-            🥚
-          </div>
-
-          <div class="card-info">
-
-            <div class="card-title">
-              Egg
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="check-wrap">
-
-          <input
-            type="checkbox"
-            class="check"
-            id="egg"
-            onchange="completeCheckbox('egg')"
-          >
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- WATER -->
-
-    <div class="card">
-
-      <div class="card-row">
-
-        <div class="card-left">
-
-          <div class="icon">
-            💧
-          </div>
-
-          <div class="card-info">
-
-            <div class="card-title">
-              Water
-            </div>
-
-            <div class="card-subtitle">
-              3 Litre
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="check-wrap">
-
-          <input
-            type="checkbox"
-            class="check"
-            id="water"
-            onchange="completeCheckbox('water')"
-          >
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- JUNK FOOD -->
-
-    <div
-      class="card junk-card"
-      id="junkCard"
-    >
-
-      <div class="card-left">
-
-        <div class="icon">
-          🍔
-        </div>
-
-        <div class="card-info">
-
-          <div class="card-title">
-            Junk Food
-          </div>
-
-          <div class="junk-note">
-            Record what you ate. This does not
-            increase your discipline progress.
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <input
-        type="text"
-        class="junk-input"
-        id="junk1"
-        placeholder="Junk Food 1"
-      >
-
-
-      <input
-        type="text"
-        class="junk-input"
-        id="junk2"
-        placeholder="Junk Food 2"
-      >
-
-
-      <input
-        type="text"
-        class="junk-input"
-        id="junk3"
-        placeholder="Junk Food 3"
-      >
-
-
-      <button
-        class="save-btn"
-        id="junkBtn"
-        onclick="lockJunk()"
-      >
-        Save & Lock
-      </button>
-
-    </div>
-
-
-  </main>
-
-
-  <div class="footer">
-    Your data is saved daily on this device.
   </div>
+
+
+  <div
+    class="progress-count"
+    id="progressCount"
+  >
+    0 / 9 completed
+  </div>
+
+</section>
+
+
+<!-- =========================
+     HABITS
+========================= -->
+
+<main class="habits">
+
+
+<!-- SPOURTS -->
+
+<div class="card">
+
+  <div class="card-row">
+
+    <div class="card-left">
+
+      <div class="icon">
+        🌾
+      </div>
+
+      <div class="card-info">
+
+        <div class="card-title">
+          Spourts
+        </div>
+
+        <div class="card-subtitle">
+          Grains & Pulses
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <input
+      type="checkbox"
+      class="check"
+      id="spourts"
+      onchange="completeCheckbox('spourts')"
+    >
+
+  </div>
+
+</div>
+
+
+<!-- MILK -->
+
+<div class="card">
+
+  <div class="card-row">
+
+    <div class="card-left">
+
+      <div class="icon">
+        🥛
+      </div>
+
+      <div class="card-info">
+
+        <div class="card-title">
+          Milk
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <input
+      type="checkbox"
+      class="check"
+      id="milk"
+      onchange="completeCheckbox('milk')"
+    >
+
+  </div>
+
+</div>
+
+
+<!-- FRUITS -->
+
+<div class="card">
+
+  <div class="card-row">
+
+    <div class="card-left">
+
+      <div class="icon">
+        🍎
+      </div>
+
+      <div class="card-info">
+
+        <div class="card-title">
+          Fruits
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <input
+      type="checkbox"
+      class="check"
+      id="fruits"
+      onchange="completeCheckbox('fruits')"
+    >
+
+  </div>
+
+</div>
+
+
+<!-- BANANA -->
+
+<div class="card">
+
+  <div class="card-row">
+
+    <div class="card-left">
+
+      <div class="icon">
+        🍌
+      </div>
+
+      <div class="card-info">
+
+        <div class="card-title">
+          1 Banana
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <input
+      type="checkbox"
+      class="check"
+      id="banana"
+      onchange="completeCheckbox('banana')"
+    >
+
+  </div>
+
+</div>
+
+
+<!-- BREAKFAST -->
+
+<div
+  class="card"
+  id="breakfastCard"
+>
+
+  <div class="card-left">
+
+    <div class="icon">
+      🍳
+    </div>
+
+    <div class="card-info">
+
+      <div class="card-title">
+        Breakfast
+      </div>
+
+      <div class="card-subtitle">
+        Write what you ate
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <textarea
+    class="text-area"
+    id="breakfast"
+    placeholder="Example: 4 eggs + oats + banana"
+  ></textarea>
+
+
+  <button
+    class="save-btn"
+    id="breakfastBtn"
+    onclick="lockMeal('breakfast')"
+  >
+    Save & Lock
+  </button>
+
+</div>
+
+
+<!-- LUNCH -->
+
+<div
+  class="card"
+  id="lunchCard"
+>
+
+  <div class="card-left">
+
+    <div class="icon">
+      🍛
+    </div>
+
+    <div class="card-info">
+
+      <div class="card-title">
+        Lunch
+      </div>
+
+      <div class="card-subtitle">
+        Write what you ate
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <textarea
+    class="text-area"
+    id="lunch"
+    placeholder="Example: Rice + chicken + vegetables"
+  ></textarea>
+
+
+  <button
+    class="save-btn"
+    id="lunchBtn"
+    onclick="lockMeal('lunch')"
+  >
+    Save & Lock
+  </button>
+
+</div>
+
+
+<!-- DINNER -->
+
+<div
+  class="card"
+  id="dinnerCard"
+>
+
+  <div class="card-left">
+
+    <div class="icon">
+      🍽️
+    </div>
+
+    <div class="card-info">
+
+      <div class="card-title">
+        Dinner
+      </div>
+
+      <div class="card-subtitle">
+        Write what you ate
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <textarea
+    class="text-area"
+    id="dinner"
+    placeholder="Example: Chicken + rice + salad"
+  ></textarea>
+
+
+  <button
+    class="save-btn"
+    id="dinnerBtn"
+    onclick="lockMeal('dinner')"
+  >
+    Save & Lock
+  </button>
+
+</div>
+
+
+<!-- EGG -->
+
+<div class="card">
+
+  <div class="card-row">
+
+    <div class="card-left">
+
+      <div class="icon">
+        🥚
+      </div>
+
+      <div class="card-info">
+
+        <div class="card-title">
+          Egg
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <input
+      type="checkbox"
+      class="check"
+      id="egg"
+      onchange="completeCheckbox('egg')"
+    >
+
+  </div>
+
+</div>
+
+
+<!-- WATER -->
+
+<div class="card">
+
+  <div class="card-row">
+
+    <div class="card-left">
+
+      <div class="icon">
+        💧
+      </div>
+
+      <div class="card-info">
+
+        <div class="card-title">
+          Water
+        </div>
+
+        <div class="card-subtitle">
+          3 Litre
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <input
+      type="checkbox"
+      class="check"
+      id="water"
+      onchange="completeCheckbox('water')"
+    >
+
+  </div>
+
+</div>
+
+
+<!-- JUNK FOOD -->
+
+<div
+  class="card"
+  id="junkCard"
+>
+
+  <div class="card-left">
+
+    <div class="icon">
+      🍔
+    </div>
+
+    <div class="card-info">
+
+      <div class="card-title">
+        Junk Food
+      </div>
+
+      <div class="junk-note">
+        Record what you ate.
+        This does not increase progress.
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <input
+    type="text"
+    class="junk-input"
+    id="junk1"
+    placeholder="Junk Food 1"
+  >
+
+
+  <input
+    type="text"
+    class="junk-input"
+    id="junk2"
+    placeholder="Junk Food 2"
+  >
+
+
+  <input
+    type="text"
+    class="junk-input"
+    id="junk3"
+    placeholder="Junk Food 3"
+  >
+
+
+  <button
+    class="save-btn"
+    id="junkBtn"
+    onclick="lockJunk()"
+  >
+    Save & Lock
+  </button>
+
+</div>
+
+
+</main>
+
+
+<div class="footer">
+  Daily Discipline • Your progress is saved automatically.
+</div>
+
 
 </div>
 
 
 <script>
 
-
 /* =====================================================
-   GOOGLE APPS SCRIPT EMAIL BACKEND
-   ===================================================== */
+   GOOGLE APPS SCRIPT
+===================================================== */
 
 const EMAIL_BACKEND_URL =
 "https://script.google.com/macros/s/AKfycbzVWV5zhdbtifUjLFShgmaZnRX04r8uqIR0NS-mn0TGJpC8GTAjhvuvHl-DFpvNeuxY/exec";
 
 
 /* =====================================================
-   LOCAL STORAGE
-   ===================================================== */
+   STORAGE
+===================================================== */
 
 const STORAGE_KEY =
-"daily_discipline_v3";
+"daily_discipline_v4";
+
+const HISTORY_KEY =
+"daily_discipline_history_v1";
 
 
-let currentDay = null;
+let currentDay;
 
 
 /* =====================================================
-   DATE
-   ===================================================== */
+   GET TODAY
+===================================================== */
 
 function getDateKey() {
 
@@ -1169,7 +1270,7 @@ function getDateKey() {
 
 /* =====================================================
    EMPTY DAY
-   ===================================================== */
+===================================================== */
 
 function emptyDay() {
 
@@ -1213,88 +1314,16 @@ function emptyDay() {
 
 
 /* =====================================================
-   LOAD TODAY
-   ===================================================== */
+   SAVE LOCAL DATA
+===================================================== */
 
-function loadToday() {
-
-  const today =
-    getDateKey();
-
-  const saved =
-    localStorage.getItem(
-      STORAGE_KEY
-    );
-
-
-  if (saved) {
-
-    try {
-
-      const parsed =
-        JSON.parse(saved);
-
-
-      if (
-        parsed &&
-        parsed.date === today &&
-        parsed.data
-      ) {
-
-        currentDay =
-          Object.assign(
-            emptyDay(),
-            parsed.data
-          );
-
-      }
-
-      else {
-
-        currentDay =
-          emptyDay();
-
-      }
-
-    }
-
-    catch(error) {
-
-      currentDay =
-        emptyDay();
-
-    }
-
-  }
-
-  else {
-
-    currentDay =
-      emptyDay();
-
-  }
-
-
-  render();
-
-  saveDay();
-
-}
-
-
-/* =====================================================
-   SAVE DAY
-   ===================================================== */
-
-function saveDay() {
+function saveLocalData() {
 
   const date =
     getDateKey();
 
 
-  /*
-    Save locally.
-  */
+  /* Current day */
 
   localStorage.setItem(
 
@@ -1311,12 +1340,66 @@ function saveDay() {
   );
 
 
-  /*
-    Send data to Google Apps Script.
-  */
+  /* History */
+
+  let history = {};
+
+  try {
+
+    history =
+      JSON.parse(
+        localStorage.getItem(
+          HISTORY_KEY
+        )
+      ) || {};
+
+  }
+
+  catch(error) {
+
+    history = {};
+
+  }
+
+
+  history[date] =
+    currentDay;
+
+
+  localStorage.setItem(
+
+    HISTORY_KEY,
+
+    JSON.stringify(history)
+
+  );
+
+}
+
+
+/* =====================================================
+   SEND TO GOOGLE APPS SCRIPT
+===================================================== */
+
+function sendToEmailBackend() {
+
+  const date =
+    getDateKey();
+
+
+  const payload = {
+
+    date: date,
+
+    data: currentDay
+
+  };
+
 
   fetch(
+
     EMAIL_BACKEND_URL,
+
     {
 
       method: "POST",
@@ -1331,13 +1414,7 @@ function saveDay() {
       },
 
       body:
-        JSON.stringify({
-
-          date: date,
-
-          data: currentDay
-
-        })
+        JSON.stringify(payload)
 
     }
 
@@ -1346,7 +1423,7 @@ function saveDay() {
     function(error) {
 
       console.log(
-        "Email sync error:",
+        "Backend sync failed:",
         error
       );
 
@@ -1358,25 +1435,81 @@ function saveDay() {
 
 
 /* =====================================================
+   SAVE EVERYTHING
+===================================================== */
+
+function saveDay() {
+
+  saveLocalData();
+
+  sendToEmailBackend();
+
+}
+
+
+/* =====================================================
+   LOAD TODAY
+===================================================== */
+
+function loadToday() {
+
+  const today =
+    getDateKey();
+
+
+  let saved = null;
+
+
+  try {
+
+    saved =
+      JSON.parse(
+        localStorage.getItem(
+          STORAGE_KEY
+        )
+      );
+
+  }
+
+  catch(error) {
+
+    saved = null;
+
+  }
+
+
+  if (
+    saved &&
+    saved.date === today &&
+    saved.data
+  ) {
+
+    currentDay =
+      Object.assign(
+        emptyDay(),
+        saved.data
+      );
+
+  }
+
+  else {
+
+    currentDay =
+      emptyDay();
+
+  }
+
+
+  render();
+
+  updateProgress();
+
+}
+
+
+/* =====================================================
    CHECKBOX HABITS
-   ===================================================== */
-
-const checkboxOptions = [
-
-  "spourts",
-
-  "milk",
-
-  "fruits",
-
-  "banana",
-
-  "egg",
-
-  "water"
-
-];
-
+===================================================== */
 
 function completeCheckbox(key) {
 
@@ -1409,8 +1542,8 @@ function completeCheckbox(key) {
 
 
 /* =====================================================
-   LOCK MEAL
-   ===================================================== */
+   MEAL LOCK
+===================================================== */
 
 function lockMeal(key) {
 
@@ -1424,6 +1557,11 @@ function lockMeal(key) {
       key + "Btn"
     );
 
+  const card =
+    document.getElementById(
+      key + "Card"
+    );
+
 
   if (!input)
     return;
@@ -1433,7 +1571,7 @@ function lockMeal(key) {
     input.value.trim();
 
 
-  if (!value) {
+  if (value === "") {
 
     alert(
       "Please enter what you ate first."
@@ -1451,37 +1589,20 @@ function lockMeal(key) {
     true;
 
 
-  input.value =
-    value;
-
   input.disabled =
     true;
 
 
-  if (button) {
+  button.disabled =
+    true;
 
-    button.disabled =
-      true;
-
-    button.textContent =
-      "🔒 Locked";
-
-  }
+  button.textContent =
+    "🔒 Locked";
 
 
-  const card =
-    document.getElementById(
-      key + "Card"
-    );
-
-
-  if (card) {
-
-    card.classList.add(
-      "locked"
-    );
-
-  }
+  card.classList.add(
+    "locked"
+  );
 
 
   saveDay();
@@ -1492,8 +1613,8 @@ function lockMeal(key) {
 
 
 /* =====================================================
-   LOCK JUNK FOOD
-   ===================================================== */
+   JUNK FOOD LOCK
+===================================================== */
 
 function lockJunk() {
 
@@ -1565,67 +1686,108 @@ function lockJunk() {
 
 
 /* =====================================================
-   PROGRESS
-   ===================================================== */
+   CALCULATE PROGRESS
+===================================================== */
 
 function calculateProgress() {
 
   let completed = 0;
 
 
-  if (currentDay.spourts)
-    completed++;
-
-
-  if (currentDay.milk)
-    completed++;
-
-
-  if (currentDay.fruits)
-    completed++;
-
-
-  if (currentDay.banana)
-    completed++;
-
+  /*
+    1. SPOURTS
+  */
 
   if (
-    currentDay.breakfastLocked &&
-    currentDay.breakfast.trim()
-  )
+    currentDay.spourts === true
+  ) {
+
     completed++;
 
+  }
+
+
+  /*
+    2. MILK
+  */
 
   if (
-    currentDay.lunchLocked &&
-    currentDay.lunch.trim()
-  )
+    currentDay.milk === true
+  ) {
+
     completed++;
 
+  }
+
+
+  /*
+    3. FRUITS
+  */
 
   if (
-    currentDay.dinnerLocked &&
-    currentDay.dinner.trim()
-  )
+    currentDay.fruits === true
+  ) {
+
     completed++;
 
+  }
 
-  if (currentDay.egg)
+
+  /*
+    4. BANANA
+  */
+
+  if (
+    currentDay.banana === true
+  ) {
+
     completed++;
 
+  }
 
-  if (currentDay.water)
+
+  /*
+    5. BREAKFAST
+  */
+
+  if (
+
+    currentDay.breakfastLocked === true &&
+
+    typeof currentDay.breakfast === "string" &&
+
+    currentDay.breakfast.trim() !== ""
+
+  ) {
+
     completed++;
 
+  }
 
-  return {
 
-    completed:
-      completed,
+  /*
+    6. LUNCH
+  */
 
-    total:
-      9,
+  if (
 
-    percentage:
-      Math.round(
-        com
+    currentDay.lunchLocked === true &&
+
+    typeof currentDay.lunch === "string" &&
+
+    currentDay.lunch.trim() !== ""
+
+  ) {
+
+    completed++;
+
+  }
+
+
+  /*
+    7. DINNER
+  */
+
+  if (
+
+    currentDay.dinnerLocked === true &
