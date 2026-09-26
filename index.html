@@ -13,11 +13,12 @@ content="#07110d">
 
 <title>Daily Discipline</title>
 
+
 <style>
 
-/* =========================
+/* =====================================================
    BASIC
-========================= */
+===================================================== */
 
 * {
   box-sizing: border-box;
@@ -68,9 +69,9 @@ body {
 }
 
 
-/* =========================
-   BACKGROUND ANIMATION
-========================= */
+/* =====================================================
+   BACKGROUND EFFECTS
+===================================================== */
 
 body::before,
 body::after {
@@ -123,9 +124,9 @@ body::after {
 }
 
 
-/* =========================
+/* =====================================================
    APP
-========================= */
+===================================================== */
 
 .app {
 
@@ -140,9 +141,9 @@ body::after {
 }
 
 
-/* =========================
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header {
 
@@ -212,29 +213,35 @@ h1 {
     0
     4px;
 
-  letter-spacing: -1.5px;
+  letter-spacing:
+    -1.5px;
 }
 
 .subtitle {
 
-  color: #9ba9a1;
+  color:
+    #9ba9a1;
 
-  font-size: 14px;
+  font-size:
+    14px;
 }
 
 .date {
 
-  margin-top: 7px;
+  margin-top:
+    7px;
 
-  color: #d7e4dc;
+  color:
+    #d7e4dc;
 
-  font-weight: 600;
+  font-weight:
+    600;
 }
 
 
-/* =========================
+/* =====================================================
    CARD
-========================= */
+===================================================== */
 
 .card {
 
@@ -251,11 +258,14 @@ h1 {
   -webkit-backdrop-filter:
     blur(18px);
 
-  border-radius: 24px;
+  border-radius:
+    24px;
 
-  padding: 18px;
+  padding:
+    18px;
 
-  margin: 12px 0;
+  margin:
+    12px 0;
 
   box-shadow:
     0 18px 55px
@@ -266,34 +276,41 @@ h1 {
 }
 
 
-/* =========================
+/* =====================================================
    PROGRESS
-========================= */
+===================================================== */
 
 .progress-card {
 
-  padding: 20px;
+  padding:
+    20px;
 }
 
 .progress-head {
 
-  display: flex;
+  display:
+    flex;
 
   justify-content:
     space-between;
 
-  align-items: end;
+  align-items:
+    end;
 
-  margin-bottom: 13px;
+  margin-bottom:
+    13px;
 }
 
 .progress-label {
 
-  font-size: 12px;
+  font-size:
+    12px;
 
-  color: #9ba9a1;
+  color:
+    #9ba9a1;
 
-  letter-spacing: 1.3px;
+  letter-spacing:
+    1.3px;
 
   text-transform:
     uppercase;
@@ -301,22 +318,29 @@ h1 {
 
 .percent {
 
-  font-size: 30px;
+  font-size:
+    30px;
 
-  font-weight: 900;
+  font-weight:
+    900;
 
-  letter-spacing: -1px;
+  letter-spacing:
+    -1px;
 }
 
 .track {
 
-  height: 15px;
+  height:
+    15px;
 
-  background: #1b2520;
+  background:
+    #1b2520;
 
-  border-radius: 99px;
+  border-radius:
+    99px;
 
-  overflow: hidden;
+  overflow:
+    hidden;
 
   border:
     1px solid
@@ -325,11 +349,14 @@ h1 {
 
 .fill {
 
-  width: 0%;
+  width:
+    0%;
 
-  height: 100%;
+  height:
+    100%;
 
-  border-radius: 99px;
+  border-radius:
+    99px;
 
   background:
 
@@ -344,7 +371,8 @@ h1 {
     width 0.8s
     cubic-bezier(.2,.8,.2,1);
 
-  position: relative;
+  position:
+    relative;
 
   box-shadow:
     0 0 15px
@@ -353,11 +381,14 @@ h1 {
 
 .fill::after {
 
-  content: "";
+  content:
+    "";
 
-  position: absolute;
+  position:
+    absolute;
 
-  inset: 0;
+  inset:
+    0;
 
   background:
 
@@ -374,34 +405,43 @@ h1 {
 
 .progress-note {
 
-  text-align: center;
+  text-align:
+    center;
 
-  color: #9ba9a1;
+  color:
+    #9ba9a1;
 
-  font-size: 12px;
+  font-size:
+    12px;
 
-  margin-top: 10px;
+  margin-top:
+    10px;
 }
 
 
-/* =========================
+/* =====================================================
    TASK
-========================= */
+===================================================== */
 
 .task {
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
   justify-content:
     space-between;
 
-  gap: 14px;
+  gap:
+    14px;
 
-  padding: 17px;
+  padding:
+    17px;
 
-  border-radius: 19px;
+  border-radius:
+    19px;
 
   background:
     rgba(255,255,255,0.045);
@@ -410,7 +450,8 @@ h1 {
     1px solid
     rgba(255,255,255,0.07);
 
-  margin: 10px 0;
+  margin:
+    10px 0;
 
   transition:
     transform .25s ease,
@@ -438,66 +479,85 @@ h1 {
 
 .task-left {
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 13px;
+  gap:
+    13px;
 
-  min-width: 0;
+  min-width:
+    0;
 }
 
 .icon {
 
-  width: 44px;
+  width:
+    44px;
 
-  height: 44px;
+  height:
+    44px;
 
   flex:
     0 0 44px;
 
-  display: grid;
+  display:
+    grid;
 
-  place-items: center;
+  place-items:
+    center;
 
-  border-radius: 14px;
+  border-radius:
+    14px;
 
   background:
     rgba(255,255,255,0.07);
 
-  font-size: 22px;
+  font-size:
+    22px;
 }
 
 .name {
 
-  font-weight: 800;
+  font-weight:
+    800;
 
-  font-size: 16px;
+  font-size:
+    16px;
 }
 
 .hint {
 
-  font-size: 11px;
+  font-size:
+    11px;
 
-  color: #9ba9a1;
+  color:
+    #9ba9a1;
 
-  margin-top: 3px;
+  margin-top:
+    3px;
 }
 
 
-/* =========================
+/* =====================================================
    CHECKBOX
-========================= */
+===================================================== */
 
 .check {
 
-  appearance: none;
+  appearance:
+    none;
 
-  -webkit-appearance: none;
+  -webkit-appearance:
+    none;
 
-  width: 29px;
+  width:
+    29px;
 
-  height: 29px;
+  height:
+    29px;
 
   flex:
     0 0 29px;
@@ -505,15 +565,20 @@ h1 {
   border:
     2px solid #68746d;
 
-  border-radius: 9px;
+  border-radius:
+    9px;
 
-  background: transparent;
+  background:
+    transparent;
 
-  position: relative;
+  position:
+    relative;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
-  transition: .25s;
+  transition:
+    .25s;
 }
 
 .check:checked {
@@ -534,75 +599,98 @@ h1 {
 
 .check:checked::after {
 
-  content: "✓";
+  content:
+    "✓";
 
-  position: absolute;
+  position:
+    absolute;
 
-  inset: 0;
+  inset:
+    0;
 
-  display: grid;
+  display:
+    grid;
 
-  place-items: center;
+  place-items:
+    center;
 
-  color: #06220f;
+  color:
+    #06220f;
 
-  font-weight: 1000;
+  font-weight:
+    1000;
 
-  font-size: 19px;
+  font-size:
+    19px;
 }
 
 .check:disabled {
 
-  cursor: not-allowed;
+  cursor:
+    not-allowed;
 }
 
 
-/* =========================
-   MEAL
-========================= */
+/* =====================================================
+   MEAL / TEXT SECTION
+===================================================== */
 
 .meal {
 
-  display: block;
+  display:
+    block;
 }
 
 .meal-top {
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  gap: 13px;
+  gap:
+    13px;
 
-  margin-bottom: 13px;
+  margin-bottom:
+    13px;
 }
 
 textarea {
 
-  width: 100%;
+  width:
+    100%;
 
-  min-height: 78px;
+  min-height:
+    78px;
 
-  resize: none;
+  resize:
+    none;
 
   border:
     1px solid
     rgba(255,255,255,0.08);
 
-  outline: 0;
+  outline:
+    0;
 
-  border-radius: 15px;
+  border-radius:
+    15px;
 
   background:
     rgba(0,0,0,0.23);
 
-  color: #f5fff8;
+  color:
+    #f5fff8;
 
-  padding: 13px;
+  padding:
+    13px;
 
-  font-family: inherit;
+  font-family:
+    inherit;
 
-  font-size: 14px;
+  font-size:
+    14px;
 
   transition:
     border .2s,
@@ -611,7 +699,8 @@ textarea {
 
 textarea::placeholder {
 
-  color: #707b74;
+  color:
+    #707b74;
 }
 
 textarea:focus {
@@ -626,39 +715,52 @@ textarea:focus {
 
 textarea:disabled {
 
-  opacity: .58;
+  opacity:
+    .58;
 
-  cursor: not-allowed;
+  cursor:
+    not-allowed;
 }
 
 
-/* =========================
+/* =====================================================
    LOCK BUTTON
-========================= */
+===================================================== */
 
 .lock {
 
-  border: 0;
+  border:
+    0;
 
-  margin-top: 9px;
+  margin-top:
+    9px;
 
   padding:
-    10px
-    13px;
+    10px 13px;
 
-  border-radius: 11px;
+  border-radius:
+    11px;
 
   background:
     rgba(255,255,255,0.08);
 
-  color: #eafff0;
+  color:
+    #eafff0;
 
-  font-weight: 750;
+  font-weight:
+    750;
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
   transition:
     .2s;
+}
+
+.lock:hover {
+
+  background:
+    rgba(69,242,138,0.13);
 }
 
 .lock:active {
@@ -669,7 +771,8 @@ textarea:disabled {
 
 .lock:disabled {
 
-  opacity: .6;
+  opacity:
+    .6;
 
   cursor:
     not-allowed;
@@ -677,46 +780,88 @@ textarea:disabled {
 
 .locked {
 
-  display: none;
+  display:
+    none;
 
-  color: #72f3a0;
+  color:
+    #72f3a0;
 
-  font-size: 11px;
+  font-size:
+    11px;
 
-  margin-top: 8px;
+  margin-top:
+    8px;
 }
 
 
-/* =========================
+/* =====================================================
+   JUNK FOOD SECTION
+===================================================== */
+
+.junk-title {
+
+  color:
+    #ffcf8a;
+}
+
+.junk-warning {
+
+  color:
+    #9ba9a1;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.5;
+
+  margin-bottom:
+    12px;
+}
+
+.junk-box {
+
+  margin-top:
+    10px;
+}
+
+
+/* =====================================================
    QUOTE
-========================= */
+===================================================== */
 
 .quote {
 
-  text-align: center;
+  text-align:
+    center;
 
   margin:
-    24px
-    4px
-    8px;
+    24px 4px 8px;
 
-  color: #dbe8df;
+  color:
+    #dbe8df;
 
-  line-height: 1.65;
+  line-height:
+    1.65;
 
-  font-weight: 700;
+  font-weight:
+    700;
 }
 
 .quote::before,
 .quote::after {
 
-  content: "";
+  content:
+    "";
 
-  display: block;
+  display:
+    block;
 
-  height: 1px;
+  height:
+    1px;
 
   background:
+
     linear-gradient(
       90deg,
       transparent,
@@ -725,9 +870,7 @@ textarea:disabled {
     );
 
   margin:
-    13px
-    0
-    20px;
+    13px 0 20px;
 }
 
 .quote strong {
@@ -737,41 +880,49 @@ textarea:disabled {
 }
 
 
-/* =========================
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 .footer {
 
-  text-align: center;
+  text-align:
+    center;
 
   color:
     #59665e;
 
-  font-size: 11px;
+  font-size:
+    11px;
 
-  margin-top: 18px;
+  margin-top:
+    18px;
 }
 
 
-/* =========================
+/* =====================================================
    TOAST
-========================= */
+===================================================== */
 
 .toast {
 
-  position: fixed;
+  position:
+    fixed;
 
-  left: 50%;
+  left:
+    50%;
 
-  bottom: 22px;
+  bottom:
+    22px;
 
   transform:
     translate(-50%,120px);
 
-  opacity: 0;
+  opacity:
+    0;
 
-  z-index: 20;
+  z-index:
+    20;
 
   background:
     #102119;
@@ -784,10 +935,10 @@ textarea:disabled {
     #dcffe9;
 
   padding:
-    12px
-    16px;
+    12px 16px;
 
-  border-radius: 14px;
+  border-radius:
+    14px;
 
   box-shadow:
     0 15px 35px
@@ -796,7 +947,8 @@ textarea:disabled {
   transition:
     .35s;
 
-  font-size: 13px;
+  font-size:
+    13px;
 }
 
 .toast.show {
@@ -804,19 +956,21 @@ textarea:disabled {
   transform:
     translate(-50%,0);
 
-  opacity: 1;
+  opacity:
+    1;
 }
 
 
-/* =========================
+/* =====================================================
    ANIMATIONS
-========================= */
+===================================================== */
 
 @keyframes dropIn {
 
   from {
 
-    opacity: 0;
+    opacity:
+      0;
 
     transform:
       translateY(-22px);
@@ -824,7 +978,8 @@ textarea:disabled {
 
   to {
 
-    opacity: 1;
+    opacity:
+      1;
 
     transform:
       translateY(0);
@@ -835,7 +990,8 @@ textarea:disabled {
 
   from {
 
-    opacity: 0;
+    opacity:
+      0;
 
     transform:
       translateY(22px);
@@ -843,7 +999,8 @@ textarea:disabled {
 
   to {
 
-    opacity: 1;
+    opacity:
+      1;
 
     transform:
       translateY(0);
@@ -854,7 +1011,8 @@ textarea:disabled {
 
   from {
 
-    opacity: 0;
+    opacity:
+      0;
 
     transform:
       translateX(-15px);
@@ -862,7 +1020,8 @@ textarea:disabled {
 
   to {
 
-    opacity: 1;
+    opacity:
+      1;
 
     transform:
       translateX(0);
@@ -883,7 +1042,8 @@ textarea:disabled {
 
   50% {
 
-    opacity: .35;
+    opacity:
+      .35;
   }
 }
 
@@ -903,23 +1063,9 @@ textarea:disabled {
 }
 
 
-@media
-(prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-
-    animation: none !important;
-
-    transition: none !important;
-  }
-}
-
-
-/* =========================
-   SMALL PHONES
-========================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:400px) {
 
@@ -933,12 +1079,14 @@ textarea:disabled {
 
   h1 {
 
-    font-size: 27px;
+    font-size:
+      27px;
   }
 
   .name {
 
-    font-size: 15px;
+    font-size:
+      15px;
   }
 
 }
@@ -954,9 +1102,9 @@ textarea:disabled {
 <main class="app">
 
 
-<!-- =========================
+<!-- =====================================================
      HEADER
-========================= -->
+===================================================== -->
 
 <header>
 
@@ -994,9 +1142,9 @@ textarea:disabled {
 
 
 
-<!-- =========================
+<!-- =====================================================
      PROGRESS
-========================= -->
+===================================================== -->
 
 <section
   class="card progress-card">
@@ -1029,7 +1177,6 @@ textarea:disabled {
     <div
       class="fill"
       id="fill">
-
     </div>
 
   </div>
@@ -1039,7 +1186,7 @@ textarea:disabled {
     class="progress-note"
     id="progressNote">
 
-    0 of 8 habits completed
+    0 of 9 habits completed
 
   </div>
 
@@ -1048,39 +1195,35 @@ textarea:disabled {
 
 
 
-<!-- =========================
-     DAILY OPTIONS
-========================= -->
+<!-- =====================================================
+     DAILY HABITS
+===================================================== -->
 
 <section class="card">
 
 
-<!-- SPOURTS -->
+<!-- =====================================================
+     SPOURTS
+===================================================== -->
 
 <div class="task">
 
   <div class="task-left">
 
     <div class="icon">
-
       🌾
-
     </div>
 
 
     <div>
 
       <div class="name">
-
         Spourts
-
       </div>
 
 
       <div class="hint">
-
         Grains & Pulses
-
       </div>
 
     </div>
@@ -1098,32 +1241,28 @@ textarea:disabled {
 
 
 
-<!-- MILK -->
+<!-- =====================================================
+     MILK
+===================================================== -->
 
 <div class="task">
 
   <div class="task-left">
 
     <div class="icon">
-
       🥛
-
     </div>
 
 
     <div>
 
       <div class="name">
-
         Milk
-
       </div>
 
 
       <div class="hint">
-
         Daily milk
-
       </div>
 
     </div>
@@ -1141,32 +1280,28 @@ textarea:disabled {
 
 
 
-<!-- FRUITS -->
+<!-- =====================================================
+     FRUITS
+===================================================== -->
 
 <div class="task">
 
   <div class="task-left">
 
     <div class="icon">
-
       🍎
-
     </div>
 
 
     <div>
 
       <div class="name">
-
         Fruits
-
       </div>
 
 
       <div class="hint">
-
         Daily fruit intake
-
       </div>
 
     </div>
@@ -1184,7 +1319,48 @@ textarea:disabled {
 
 
 
-<!-- BREAKFAST -->
+<!-- =====================================================
+     BANANA
+===================================================== -->
+
+<div class="task">
+
+  <div class="task-left">
+
+    <div class="icon">
+      🍌
+    </div>
+
+
+    <div>
+
+      <div class="name">
+        1 Banana
+      </div>
+
+
+      <div class="hint">
+        Daily banana
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <input
+    class="check"
+    id="banana"
+    type="checkbox"
+    aria-label="1 Banana">
+
+</div>
+
+
+
+<!-- =====================================================
+     BREAKFAST
+===================================================== -->
 
 <div class="task meal">
 
@@ -1192,25 +1368,19 @@ textarea:disabled {
   <div class="meal-top">
 
     <div class="icon">
-
       🍳
-
     </div>
 
 
     <div>
 
       <div class="name">
-
         Breakfast
-
       </div>
 
 
       <div class="hint">
-
         Write what you ate
-
       </div>
 
     </div>
@@ -1246,7 +1416,9 @@ textarea:disabled {
 
 
 
-<!-- LUNCH -->
+<!-- =====================================================
+     LUNCH
+===================================================== -->
 
 <div class="task meal">
 
@@ -1254,25 +1426,19 @@ textarea:disabled {
   <div class="meal-top">
 
     <div class="icon">
-
       🍛
-
     </div>
 
 
     <div>
 
       <div class="name">
-
         Lunch
-
       </div>
 
 
       <div class="hint">
-
         Write what you ate
-
       </div>
 
     </div>
@@ -1308,7 +1474,9 @@ textarea:disabled {
 
 
 
-<!-- DINNER -->
+<!-- =====================================================
+     DINNER
+===================================================== -->
 
 <div class="task meal">
 
@@ -1316,25 +1484,19 @@ textarea:disabled {
   <div class="meal-top">
 
     <div class="icon">
-
       🍽️
-
     </div>
 
 
     <div>
 
       <div class="name">
-
         Dinner
-
       </div>
 
 
       <div class="hint">
-
         Write what you ate
-
       </div>
 
     </div>
@@ -1370,32 +1532,28 @@ textarea:disabled {
 
 
 
-<!-- EGG -->
+<!-- =====================================================
+     EGG
+===================================================== -->
 
 <div class="task">
 
   <div class="task-left">
 
     <div class="icon">
-
       🥚
-
     </div>
 
 
     <div>
 
       <div class="name">
-
         Egg
-
       </div>
 
 
       <div class="hint">
-
         Daily egg target
-
       </div>
 
     </div>
@@ -1413,32 +1571,28 @@ textarea:disabled {
 
 
 
-<!-- WATER -->
+<!-- =====================================================
+     WATER
+===================================================== -->
 
 <div class="task">
 
   <div class="task-left">
 
     <div class="icon">
-
       💧
-
     </div>
 
 
     <div>
 
       <div class="name">
-
         Water — 3 Litre
-
       </div>
 
 
       <div class="hint">
-
         Complete your daily target
-
       </div>
 
     </div>
@@ -1459,9 +1613,107 @@ textarea:disabled {
 
 
 
-<!-- =========================
-     QUOTE
-========================= -->
+<!-- =====================================================
+     JUNK FOOD
+===================================================== -->
+
+<section class="card">
+
+
+  <div class="meal-top">
+
+    <div class="icon">
+      🍔
+    </div>
+
+
+    <div>
+
+      <div class="name junk-title">
+        Junk Food
+      </div>
+
+
+      <div class="hint">
+        Record what you ate
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="junk-warning">
+
+    If you ate junk food today,
+    record it honestly.
+    This section does not increase
+    your discipline progress.
+
+  </div>
+
+
+  <!-- JUNK FOOD BOX 1 -->
+
+  <div class="junk-box">
+
+    <textarea
+      id="junk1"
+      placeholder="Junk Food 1 — Example: Burger">
+    </textarea>
+
+  </div>
+
+
+  <!-- JUNK FOOD BOX 2 -->
+
+  <div class="junk-box">
+
+    <textarea
+      id="junk2"
+      placeholder="Junk Food 2 — Example: Pizza">
+    </textarea>
+
+  </div>
+
+
+  <!-- JUNK FOOD BOX 3 -->
+
+  <div class="junk-box">
+
+    <textarea
+      id="junk3"
+      placeholder="Junk Food 3 — Example: Soft drink">
+    </textarea>
+
+  </div>
+
+
+  <button
+    class="lock"
+    id="junkBtn">
+
+    🔒 Save & Lock Junk Food
+
+  </button>
+
+
+  <div
+    class="locked"
+    id="junkLocked">
+
+    ✓ Junk food record locked for today
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     MOTIVATION
+===================================================== -->
 
 <div class="quote">
 
@@ -1481,6 +1733,11 @@ textarea:disabled {
   Your daily discipline
   is saved on this device.
 
+  <br><br>
+
+  New day starts automatically
+  after midnight.
+
 </div>
 
 
@@ -1488,34 +1745,35 @@ textarea:disabled {
 
 
 
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
 <div
   class="toast"
   id="toast">
-
 </div>
 
 
 
 <script>
 
-/* ==================================
-   DAILY STORAGE
-================================== */
-
+/* =====================================================
+   STORAGE
+===================================================== */
 
 const STORAGE_KEY =
-  "daily_discipline_v2";
+  "daily_discipline_v3";
 
 
-/* ==================================
-   TODAY'S DATE
-================================== */
+/* =====================================================
+   TODAY DATE
+===================================================== */
 
 function getDateKey() {
 
   const now =
     new Date();
-
 
   return (
 
@@ -1525,22 +1783,22 @@ function getDateKey() {
 
     + String(
         now.getMonth() + 1
-      ).padStart(2,"0")
+      ).padStart(2, "0")
 
     + "-"
 
     + String(
         now.getDate()
-      ).padStart(2,"0")
+      ).padStart(2, "0")
 
   );
 
 }
 
 
-/* ==================================
+/* =====================================================
    EMPTY DAY
-================================== */
+===================================================== */
 
 function emptyDay() {
 
@@ -1552,6 +1810,8 @@ function emptyDay() {
 
     fruits: false,
 
+    banana: false,
+
     breakfast: "",
 
     breakfastLocked: false,
@@ -1562,744 +1822,4 @@ function emptyDay() {
 
     dinner: "",
 
-    dinnerLocked: false,
-
-    egg: false,
-
-    water: false
-
-  };
-
-}
-
-
-/* ==================================
-   CURRENT DAY
-================================== */
-
-let currentDate =
-  getDateKey();
-
-
-let data =
-  emptyDay();
-
-
-/* ==================================
-   STORAGE
-================================== */
-
-function getAllDays() {
-
-  try {
-
-    return JSON.parse(
-      localStorage.getItem(
-        STORAGE_KEY
-      ) || "{}"
-    );
-
-  }
-
-  catch(error) {
-
-    return {};
-
-  }
-
-}
-
-
-/* ==================================
-   SAVE TODAY
-================================== */
-
-function saveDay() {
-
-  const allDays =
-    getAllDays();
-
-
-  allDays[currentDate] =
-    data;
-
-
-  localStorage.setItem(
-
-    STORAGE_KEY,
-
-    JSON.stringify(allDays)
-
-  );
-
-}
-
-
-/* ==================================
-   LOAD TODAY
-================================== */
-
-function loadToday() {
-
-  const allDays =
-    getAllDays();
-
-
-  if (
-    allDays[currentDate]
-  ) {
-
-    data =
-      allDays[currentDate];
-
-  }
-
-  else {
-
-    data =
-      emptyDay();
-
-  }
-
-
-  render();
-
-}
-
-
-/* ==================================
-   DISPLAY DATE
-================================== */
-
-function displayDate() {
-
-  const now =
-    new Date();
-
-
-  document.getElementById(
-    "date"
-  ).textContent =
-
-    now.toLocaleDateString(
-
-      "en-IN",
-
-      {
-
-        weekday:
-          "long",
-
-        day:
-          "numeric",
-
-        month:
-          "long",
-
-        year:
-          "numeric"
-
-      }
-
-    );
-
-}
-
-
-/* ==================================
-   CHECKBOX OPTIONS
-================================== */
-
-const checkboxOptions = [
-
-  "spourts",
-
-  "milk",
-
-  "fruits",
-
-  "egg",
-
-  "water"
-
-];
-
-
-checkboxOptions.forEach(
-
-  function(name) {
-
-
-    const checkbox =
-      document.getElementById(
-        name
-      );
-
-
-    checkbox.addEventListener(
-
-      "change",
-
-      function() {
-
-
-        /*
-          Once checked,
-          it can NEVER be
-          unchecked during
-          this day.
-        */
-
-        if (
-          data[name] === true
-        ) {
-
-          checkbox.checked =
-            true;
-
-          checkbox.disabled =
-            true;
-
-          return;
-
-        }
-
-
-        data[name] =
-          true;
-
-
-        checkbox.checked =
-          true;
-
-
-        checkbox.disabled =
-          true;
-
-
-        saveDay();
-
-
-        updateProgress();
-
-
-        showToast(
-          "Locked for today ✓"
-        );
-
-      }
-
-    );
-
-  }
-
-);
-
-
-/* ==================================
-   MEAL LOCKING
-================================== */
-
-const meals = [
-
-  "breakfast",
-
-  "lunch",
-
-  "dinner"
-
-];
-
-
-meals.forEach(
-
-  function(name) {
-
-
-    const textarea =
-      document.getElementById(
-        name
-      );
-
-
-    const button =
-      document.getElementById(
-        name + "Btn"
-      );
-
-
-    button.addEventListener(
-
-      "click",
-
-      function() {
-
-
-        const value =
-          textarea.value.trim();
-
-
-        if (!value) {
-
-          showToast(
-            "Write something first."
-          );
-
-          return;
-
-        }
-
-
-        /*
-          Save the text
-          permanently
-          for today's page.
-        */
-
-        data[name] =
-          value;
-
-
-        data[name + "Locked"] =
-          true;
-
-
-        saveDay();
-
-
-        render();
-
-
-        showToast(
-          "Saved & locked ✓"
-        );
-
-      }
-
-    );
-
-  }
-
-);
-
-
-/* ==================================
-   RENDER
-================================== */
-
-function render() {
-
-
-  /*
-    CHECKBOXES
-  */
-
-  checkboxOptions.forEach(
-
-    function(name) {
-
-
-      const checkbox =
-        document.getElementById(
-          name
-        );
-
-
-      checkbox.checked =
-        data[name] === true;
-
-
-      checkbox.disabled =
-        data[name] === true;
-
-    }
-
-  );
-
-
-  /*
-    MEALS
-  */
-
-  meals.forEach(
-
-    function(name) {
-
-
-      const textarea =
-        document.getElementById(
-          name
-        );
-
-
-      const button =
-        document.getElementById(
-          name + "Btn"
-        );
-
-
-      const lockedMessage =
-        document.getElementById(
-          name + "Locked"
-        );
-
-
-      textarea.value =
-        data[name] || "";
-
-
-      if (
-        data[name + "Locked"]
-      ) {
-
-
-        textarea.disabled =
-          true;
-
-
-        button.disabled =
-          true;
-
-
-        button.textContent =
-          "🔒 Locked";
-
-
-        lockedMessage.style.display =
-          "block";
-
-      }
-
-      else {
-
-
-        textarea.disabled =
-          false;
-
-
-        button.disabled =
-          false;
-
-
-        button.textContent =
-          "🔒 Save & Lock";
-
-
-        lockedMessage.style.display =
-          "none";
-
-      }
-
-    }
-
-  );
-
-
-  updateProgress();
-
-}
-
-
-/* ==================================
-   PROGRESS
-================================== */
-
-function updateProgress() {
-
-
-  let completed =
-    0;
-
-
-  const total =
-    8;
-
-
-  /*
-    SPOURTS
-  */
-
-  if (
-    data.spourts
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    MILK
-  */
-
-  if (
-    data.milk
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    FRUITS
-  */
-
-  if (
-    data.fruits
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    BREAKFAST
-  */
-
-  if (
-
-    data.breakfastLocked
-
-    &&
-
-    data.breakfast.trim()
-
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    LUNCH
-  */
-
-  if (
-
-    data.lunchLocked
-
-    &&
-
-    data.lunch.trim()
-
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    DINNER
-  */
-
-  if (
-
-    data.dinnerLocked
-
-    &&
-
-    data.dinner.trim()
-
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    EGG
-  */
-
-  if (
-    data.egg
-  ) {
-
-    completed++;
-
-  }
-
-
-  /*
-    WATER
-  */
-
-  if (
-    data.water
-  ) {
-
-    completed++;
-
-  }
-
-
-  const percentage =
-    Math.round(
-      (completed / total) * 100
-    );
-
-
-  /*
-    NUMBER
-  */
-
-  document.getElementById(
-    "percent"
-  ).textContent =
-
-    percentage + "%";
-
-
-  /*
-    PROGRESS BAR
-  */
-
-  document.getElementById(
-    "fill"
-  ).style.width =
-
-    percentage + "%";
-
-
-  /*
-    TEXT
-  */
-
-  document.getElementById(
-    "progressNote"
-  ).textContent =
-
-    completed
-    + " of "
-    + total
-    + " habits completed";
-
-}
-
-
-/* ==================================
-   TOAST
-================================== */
-
-function showToast(message) {
-
-
-  const toast =
-    document.getElementById(
-      "toast"
-    );
-
-
-  toast.textContent =
-    message;
-
-
-  toast.classList.add(
-    "show"
-  );
-
-
-  setTimeout(
-
-    function() {
-
-      toast.classList.remove(
-        "show"
-      );
-
-    },
-
-    1800
-
-  );
-
-}
-
-
-/* ==================================
-   MIDNIGHT DAILY RESET
-================================== */
-
-setInterval(
-
-  function() {
-
-
-    const newDate =
-      getDateKey();
-
-
-    /*
-      The page stays exactly
-      the same during the day.
-
-      When the calendar date
-      changes, a completely
-      new daily page is loaded.
-    */
-
-    if (
-      newDate !== currentDate
-    ) {
-
-
-      currentDate =
-        newDate;
-
-
-      data =
-        emptyDay();
-
-
-      /*
-        Refresh the page
-        at the new day.
-      */
-
-      window.location.reload();
-
-    }
-
-  },
-
-  5000
-
-);
-
-
-/* ==================================
-   PREVENT ACCIDENTAL
-   BACK NAVIGATION DATA LOSS
-================================== */
-
-window.addEventListener(
-
-  "beforeunload",
-
-  function() {
-
-    saveDay();
-
-  }
-
-);
-
-
-/* ==================================
-   START WEBSITE
-================================== */
-
-displayDate();
-
-loadToday();
-
-</script>
-
-
-</body>
-
-</html>
+    dinner
